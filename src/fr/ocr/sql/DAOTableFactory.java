@@ -14,7 +14,7 @@ import fr.ocr.ihm.ButtonRenderer;
 import fr.ocr.ihm.listener.ViewDetailVehiculeListener;
 
 /**
- * Classe permettant de créer l'objet JTable en fonction de la table que nous
+ * Classe permettant de crÃ©er l'objet JTable en fonction de la table que nous
  * souhaitons afficher
  * 
  * @author cysboy
@@ -33,8 +33,8 @@ public class DAOTableFactory {
 			ResultSetMetaData resultMeta = result.getMetaData();
 			int nbreColumn = resultMeta.getColumnCount();
 			
-			// Pour récupérer le nombre total de ligne
-			// on se place sur la dernière puis on revient avant la première
+			// Pour rÃ©cupÃ©rer le nombre total de ligne
+			// on se place sur la derniÃ©re puis on revient avant la premiÃ©re
 			// pour parcourir
 			result.last();
 			int nbreRow = result.getRow();
@@ -73,7 +73,7 @@ public class DAOTableFactory {
 			tab = new JTable(data, title);
 
 			/**
-			 * On affiche les boutons uniquement pour la table véhicule
+			 * On affiche les boutons uniquement pour la table vÃ©hicule
 			 */
 			if (table.equals(DatabaseTable.VEHICULE)) {
 				tab.getColumn("ACTION").setCellRenderer(

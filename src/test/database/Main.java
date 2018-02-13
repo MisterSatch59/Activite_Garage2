@@ -7,9 +7,28 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+
+import dao.DAO;
+import dao.DAOFactory;
+import voiture.Marque;
+import voiture.Vehicule;
+import voiture.moteur.Moteur;
+import voiture.moteur.TypeMoteur;
+import voiture.option.Option;
 
 public class Main {
 	public static void main(String[] args) {
+		
+		
+		DAO<Vehicule> dao = DAOFactory.getDAOVehicule();
+		List<Vehicule> vehicules = dao.afficher();
+		for( Vehicule v : vehicules) {
+			System.out.println(" - " + v.toString());
+		}
+		
+		System.out.println("\n---------------------------------------------------------------------\n");
+		
 		String path = "";
 
 		try {
@@ -19,7 +38,8 @@ public class Main {
 			e1.printStackTrace();
 		}
 
-		System.out.println("Chemin d'accès à  HSQLDB : " + path);
+		System.out.println("Chemin d'accï¿½s ï¿½ HSQLDB : " + path);
+		
 
 		try {
 			Class.forName("org.hsqldb.jdbc.JDBCDriver");
@@ -73,5 +93,6 @@ public class Main {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
 	}
 }

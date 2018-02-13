@@ -25,7 +25,7 @@ import fr.ocr.sql.HsqldbConnection;
 
 public class Garage extends JFrame {
 
-	//Les différents objets de notre IHM
+	//Les diffÃ©rents objets de notre IHM
 	private JMenuBar bar = new JMenuBar();
 	private JMenu menuVehicule = new JMenu("Vehicule");
 	private JMenuItem menuVehiculeAjouter = new JMenuItem("Ajouter");
@@ -46,7 +46,7 @@ public class Garage extends JFrame {
 	private JTable tableau;
 	private JButton change = new JButton("Changer la taille");
 	// Contenu de notre combo
-	private String[] comboData = { "Très bien", "Bien", "Mal" };
+	private String[] comboData = { "Trï¿½s bien", "Bien", "Mal" };
 
 	private JPanel contentPane = new JPanel();
 
@@ -55,7 +55,7 @@ public class Garage extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("JTable");
 		this.setSize(800, 400);
-		// Données de notre tableau
+		// DonnÃ©es de notre tableau
 
 		this.getContentPane()
 				.add(new JScrollPane(DAOTableFactory.getTable(
@@ -66,7 +66,7 @@ public class Garage extends JFrame {
 	}
 
 	/**
-	 * Méthode qui initialise les points de menu
+	 * Mï¿½thode qui initialise les points de menu
 	 */
 	private void initMenu() {
 		menuVehicule.add(menuVehiculeVoir);

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_Vo45IBCLEeiDI9oMGiSTUw" name="sql">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_vTFJ8BCMEeiDI9oMGiSTUw">
+      <body>Singleton pour la conection à la BDD&#xD;
+</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_7oPv0BCMEeiDI9oMGiSTUw">
+      <body>Enumeration contenant la liste des tables de la BBDD&#xD;
+</body>
+    </ownedComment>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_VunGoBCLEeiDI9oMGiSTUw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_XZ8AABCLEeiDI9oMGiSTUw" name="Activite_Garage2">
+      <packagedElement xmi:type="uml:Package" xmi:id="_XbuvwBCLEeiDI9oMGiSTUw" name="fr">
+        <packagedElement xmi:type="uml:Package" xmi:id="_XbuvwRCLEeiDI9oMGiSTUw" name="ocr">
+          <packagedElement xmi:type="uml:Package" xmi:id="_XbuvwhCLEeiDI9oMGiSTUw" name="sql">
+            <packagedElement xmi:type="uml:Enumeration" xmi:id="_aEHHQBCLEeiDI9oMGiSTUw" name="DatabaseTable" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_aEapQBCLEeiDI9oMGiSTUw" name="name" visibility="private" isUnique="false">
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_aEapQRCLEeiDI9oMGiSTUw" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>&quot;&quot;</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_aEapQhCLEeiDI9oMGiSTUw" name="DatabaseTable" visibility="private">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_aEjzMBCLEeiDI9oMGiSTUw" name="n"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_aEjzMRCLEeiDI9oMGiSTUw" name="toString" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_aEjzMhCLEeiDI9oMGiSTUw" direction="return"/>
+              </ownedOperation>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aEHHQRCLEeiDI9oMGiSTUw" name="VEHICULE">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_aEHHQhCLEeiDI9oMGiSTUw" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;vehicule&quot;</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aEQ4QBCLEeiDI9oMGiSTUw" name="MARQUE">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_aEQ4QRCLEeiDI9oMGiSTUw" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;marque&quot;</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aEQ4QhCLEeiDI9oMGiSTUw" name="TYPEMOTEUR">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_aEQ4QxCLEeiDI9oMGiSTUw" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;type_moteur&quot;</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aEQ4RBCLEeiDI9oMGiSTUw" name="MOTEUR">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_aEQ4RRCLEeiDI9oMGiSTUw" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;moteur&quot;</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aEQ4RhCLEeiDI9oMGiSTUw" name="OPTION">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_aEQ4RxCLEeiDI9oMGiSTUw" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;option&quot;</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_aEQ4SBCLEeiDI9oMGiSTUw" name="VEHICULE_OPTION">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_aEQ4SRCLEeiDI9oMGiSTUw" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;vehicule_option&quot;</body>
+                </specification>
+              </ownedLiteral>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_atA6UBCLEeiDI9oMGiSTUw" name="HsqldbConnection" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_atA6URCLEeiDI9oMGiSTUw" name="url" visibility="private" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_atKrUBCLEeiDI9oMGiSTUw" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>&quot;jdbc:hsqldb:file:hsqldb/database/VEHICULE&quot;</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_atKrURCLEeiDI9oMGiSTUw" name="user" visibility="private" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_atKrUhCLEeiDI9oMGiSTUw" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>&quot;SA&quot;</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_atKrUxCLEeiDI9oMGiSTUw" name="passwd" visibility="private" isUnique="false">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_atKrVBCLEeiDI9oMGiSTUw" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>&quot;&quot;</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_atT1QBCLEeiDI9oMGiSTUw" name="connect" visibility="private" isStatic="true" type="_9rfKMBCdEeiJkbupgzb4ow" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_atT1QRCLEeiDI9oMGiSTUw" name="instance" visibility="private" isStatic="true" type="_9rfKMBCdEeiJkbupgzb4ow" isUnique="false">
+                <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_atT1QhCLEeiDI9oMGiSTUw" name="defaultValue">
+                  <language>JAVA</language>
+                  <body>new HsqldbConnection()</body>
+                </defaultValue>
+              </ownedAttribute>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_atdmQRCLEeiDI9oMGiSTUw" name="HsqldbConnection" specification="_atT1QxCLEeiDI9oMGiSTUw">
+                <language>JAVA</language>
+                <body>&#xD;
+    try {&#xD;
+        connect = DriverManager.getConnection(url, user, passwd);&#xD;
+    } catch (SQLException e) {&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_atdmRBCLEeiDI9oMGiSTUw" name="getInstance" specification="_atdmQhCLEeiDI9oMGiSTUw">
+                <language>JAVA</language>
+                <body>&#xD;
+    if (connect == null)&#xD;
+        instance = new HsqldbConnection();&#xD;
+    return connect;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_atT1QxCLEeiDI9oMGiSTUw" name="HsqldbConnection" visibility="private" method="_atdmQRCLEeiDI9oMGiSTUw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_atdmQhCLEeiDI9oMGiSTUw" name="getInstance" visibility="public" isStatic="true" method="_atdmRBCLEeiDI9oMGiSTUw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_atdmQxCLEeiDI9oMGiSTUw" direction="return"/>
+              </ownedOperation>
+            </packagedElement>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_FFEi4BDKEeiJkbupgzb4ow" name="dao">
+        <packagedElement xmi:type="uml:Class" xmi:id="_FFzisBDKEeiJkbupgzb4ow" name="T"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_07zMUBCUEeiDI9oMGiSTUw" name="DAOFactory">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JPdSwBCVEeiDI9oMGiSTUw" name="conn" isStatic="true" type="_9rfKMBCdEeiJkbupgzb4ow"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_oXiIkBCWEeiDI9oMGiSTUw" name="getDAOMarque" isStatic="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xQmbABCWEeiDI9oMGiSTUw" name="dao" type="_8opt0BCVEeiDI9oMGiSTUw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_01dB0BCWEeiDI9oMGiSTUw" name="getDAOVehicule" isStatic="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_01dB0hCWEeiDI9oMGiSTUw" type="_-99YUBCVEeiDI9oMGiSTUw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_9YA4wBCWEeiDI9oMGiSTUw" name="getDAOOption" visibility="public" isStatic="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_9YA4whCWEeiDI9oMGiSTUw" name="dao" type="_927e0BCVEeiDI9oMGiSTUw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_GO9EQBCXEeiDI9oMGiSTUw" name="getDAOMoteur" isStatic="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_GO9EQhCXEeiDI9oMGiSTUw" name="dao" type="_BjvHwBCWEeiDI9oMGiSTUw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_KJIa0BCXEeiDI9oMGiSTUw" name="getDAOTypeMoteur" isStatic="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KJIa0hCXEeiDI9oMGiSTUw" name="dao" type="_AG5WUBCWEeiDI9oMGiSTUw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Qr_80BCVEeiDI9oMGiSTUw" name="DAO &lt;T>" isAbstract="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UZapwBCVEeiDI9oMGiSTUw" name="conn" type="_9rfKMBCdEeiJkbupgzb4ow"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cSEBABCVEeiDI9oMGiSTUw" name="ajouter" isAbstract="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_mIJ8YBCVEeiDI9oMGiSTUw" name="obj"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_oIjt4BCVEeiDI9oMGiSTUw" name="supprimer" isAbstract="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_oIjt4RCVEeiDI9oMGiSTUw" name="obj"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_tnmwgBCVEeiDI9oMGiSTUw" name="afficher">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_x_G8QBCVEeiDI9oMGiSTUw" name="listObj" direction="return">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iLpYoBCXEeiDI9oMGiSTUw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iL6eYBCXEeiDI9oMGiSTUw" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_1J42MBCVEeiDI9oMGiSTUw" name="info">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_5OPccBCVEeiDI9oMGiSTUw" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_LKaT0BCmEeiJkbupgzb4ow" name="Obj" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_WEcoMBCVEeiDI9oMGiSTUw" name="crée" client="_07zMUBCUEeiDI9oMGiSTUw" supplier="_Qr_80BCVEeiDI9oMGiSTUw"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8opt0BCVEeiDI9oMGiSTUw" name="DAOMarque">
+      <generalization xmi:type="uml:Generalization" xmi:id="_LoOEcBCWEeiDI9oMGiSTUw" general="_Qr_80BCVEeiDI9oMGiSTUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_927e0BCVEeiDI9oMGiSTUw" name="DAOOption">
+      <generalization xmi:type="uml:Generalization" xmi:id="_MQqkgBCWEeiDI9oMGiSTUw" general="_Qr_80BCVEeiDI9oMGiSTUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_-99YUBCVEeiDI9oMGiSTUw" name="DAOVehicule">
+      <generalization xmi:type="uml:Generalization" xmi:id="_Kao3ABCWEeiDI9oMGiSTUw" general="_Qr_80BCVEeiDI9oMGiSTUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_AG5WUBCWEeiDI9oMGiSTUw" name="DAOTypeMoteur">
+      <generalization xmi:type="uml:Generalization" xmi:id="_NlqBgBCWEeiDI9oMGiSTUw" general="_Qr_80BCVEeiDI9oMGiSTUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_BjvHwBCWEeiDI9oMGiSTUw" name="DAOMoteur">
+      <generalization xmi:type="uml:Generalization" xmi:id="_M5YxYBCWEeiDI9oMGiSTUw" general="_Qr_80BCVEeiDI9oMGiSTUw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_9rfKMBCdEeiJkbupgzb4ow" name="Connection"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_FFOT4BDKEeiJkbupgzb4ow" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_FFTzcBDKEeiJkbupgzb4ow" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_FFVBkBDKEeiJkbupgzb4ow" name="sql">
+          <packagedElement xmi:type="uml:Class" xmi:id="_FFVBkRDKEeiJkbupgzb4ow" name="Connection"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_FGZ_oBDKEeiJkbupgzb4ow" name="ResultSet"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_FGgtUBDKEeiJkbupgzb4ow" name="SQLException"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_FFhO0BDKEeiJkbupgzb4ow" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_FFh14BDKEeiJkbupgzb4ow" name="String"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Xarm4BCLEeiDI9oMGiSTUw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Xarm4RCLEeiDI9oMGiSTUw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Xa1X4BCLEeiDI9oMGiSTUw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Xa_I4BCLEeiDI9oMGiSTUw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_Xa_I4RCLEeiDI9oMGiSTUw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Xa_I4hCLEeiDI9oMGiSTUw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_ZTW_wBCLEeiDI9oMGiSTUw" name="DatabaseTable" base_Classifier="_aEHHQBCLEeiDI9oMGiSTUw"/>
+  <standard:Create xmi:id="_aEapQxCLEeiDI9oMGiSTUw" base_BehavioralFeature="_aEapQhCLEeiDI9oMGiSTUw"/>
+  <standard:Create xmi:id="_atdmQBCLEeiDI9oMGiSTUw" base_BehavioralFeature="_atT1QxCLEeiDI9oMGiSTUw"/>
+  <PapyrusJava:External xmi:id="_FFbIMBDKEeiJkbupgzb4ow" name="java.sql.Connection" base_Classifier="_FFVBkRDKEeiJkbupgzb4ow"/>
+  <PapyrusJava:External xmi:id="_FFkSIBDKEeiJkbupgzb4ow" name="java.lang.String" base_Classifier="_FFh14BDKEeiJkbupgzb4ow"/>
+  <PapyrusJava:External xmi:id="_FF2mABDKEeiJkbupgzb4ow" name="T" base_Classifier="_FFzisBDKEeiJkbupgzb4ow"/>
+  <PapyrusJava:External xmi:id="_FGdC8BDKEeiJkbupgzb4ow" name="java.sql.ResultSet" base_Classifier="_FGZ_oBDKEeiJkbupgzb4ow"/>
+  <PapyrusJava:External xmi:id="_FGjJkBDKEeiJkbupgzb4ow" name="java.sql.SQLException" base_Classifier="_FGgtUBDKEeiJkbupgzb4ow"/>
+</xmi:XMI>

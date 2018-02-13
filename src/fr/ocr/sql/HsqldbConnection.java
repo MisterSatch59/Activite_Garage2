@@ -15,7 +15,7 @@ public class HsqldbConnection {
 	private static Connection connect;
 	private static HsqldbConnection instance = new HsqldbConnection();
 
-	// Constructeur privé
+	// Constructeur privÃ©
 	private HsqldbConnection() {
 		try {
 			connect = DriverManager.getConnection(url, user, passwd);
@@ -24,7 +24,7 @@ public class HsqldbConnection {
 		}
 	}
 
-	// Méthode d'accès au singleton
+	// MÃ©thode d'accÃ©s au singleton
 	public static Connection getInstance() {
 		if (connect == null)
 			instance = new HsqldbConnection();

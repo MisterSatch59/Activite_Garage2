@@ -26,8 +26,7 @@ public class Vehicule {
 		this.prix = prix;
 	}
 
-	public Vehicule(int id, String nom, Marque marque, Moteur mot,
-			List<Option> lopt, Double prix) {
+	public Vehicule(int id, String nom, Marque marque, Moteur mot, List<Option> lopt, Double prix) {
 		this.id = id;
 		this.nom = nom;
 		this.marque = marque;
@@ -38,8 +37,8 @@ public class Vehicule {
 
 	public String toString() {
 		String str = marque + " : " + nom + " " + mot + " (" + this.prix
-				+ "€) " + listOptions;
-		str += " d'une valeur totale de " + getPrixTotal() + " €";
+				+ "â‚¬) " + listOptions;
+		str += " d'une valeur totale de " + getPrixTotal() + " â‚¬";
 		return str;
 	}
 
