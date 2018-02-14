@@ -4,10 +4,14 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Iterator;
+import java.util.List;
+
 import fr.ocr.sql.DatabaseTable;
 import voiture.Marque;
 import voiture.Vehicule;
 import voiture.moteur.Moteur;
+import voiture.option.Option;
 
 /**
  * DAO associé au JavaBean Marque
@@ -22,15 +26,17 @@ public class DAOVehicule extends DAO<Vehicule> {
 	}
 
 	@Override
-	public void ajouter(Vehicule obj) {
-		// TODO Auto-generated method stub
+	public void supprimer(int id) {
+		Statement state;
+		try {
+			state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			state.executeUpdate("DELETE FROM " + DatabaseTable.VEHICULE_OPTION + " WHERE id_vehicule = " + id);
+			state.executeUpdate("DELETE FROM " + table + " WHERE id = " + id);
 
-	}
-
-	@Override
-	public void supprimer(Vehicule obj) {
-		// TODO Auto-generated method stub
-
+			state.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -73,6 +79,44 @@ public class DAOVehicule extends DAO<Vehicule> {
 		}
 
 		return v;
+	}
+
+	@Override
+	public void ajouter(Vehicule obj) {
+		super.ajouter(obj);
+
+		// Ajout des options dans la BDD vehicule_option
+		List<Option> opt = obj.getOptions();
+
+		try {
+			Statement state;
+			state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+			ResultSet nextID = conn.prepareStatement("CALL NEXT VALUE FOR seq_vehicule_id").executeQuery();
+			int ID = -1;
+			if (nextID.next()) {
+				ID = nextID.getInt(1) - 1;
+			}
+			for (Iterator<Option> iterator = opt.iterator(); iterator.hasNext();) {
+				Option option = iterator.next();
+				state.executeUpdate("INSERT INTO " + DatabaseTable.VEHICULE_OPTION
+						+ " (id_vehicule, id_option)  VALUES ( " + ID + ", " + option.getId() + " )");
+			}
+			state.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	protected String getValeur(Vehicule obj) {
+		return "'" + obj.getMarque().getId() + "', '" + obj.getMoteur().getId() + "', '" + obj.getPrix() + "', '"
+				+ obj.getNom() + "'";
+	}
+
+	@Override
+	protected String getColonnes() {
+		return "marque, moteur, prix, nom";
 	}
 
 };

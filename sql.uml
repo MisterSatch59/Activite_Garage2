@@ -148,8 +148,10 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_cSEBABCVEeiDI9oMGiSTUw" name="ajouter" isAbstract="true">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_mIJ8YBCVEeiDI9oMGiSTUw" name="obj"/>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_oIjt4BCVEeiDI9oMGiSTUw" name="supprimer" isAbstract="true">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_oIjt4RCVEeiDI9oMGiSTUw" name="obj"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_oIjt4BCVEeiDI9oMGiSTUw" name="supprimer">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_oIjt4RCVEeiDI9oMGiSTUw" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_tnmwgBCVEeiDI9oMGiSTUw" name="afficher">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_x_G8QBCVEeiDI9oMGiSTUw" name="listObj" direction="return">

@@ -7,6 +7,7 @@ import voiture.option.Option;
 
 /**
  * DAO associé au JavaBean Marque
+ * 
  * @author Oltenos
  * @version 1.0
  */
@@ -17,25 +18,23 @@ public class DAOOption extends DAO<Option> {
 	}
 
 	@Override
-	public void ajouter(Option obj) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void supprimer(Option obj) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	protected Option initT() {
 		return new Option();
 	}
 
 	@Override
 	protected Option getT(ResultSet result) throws SQLException {
-		return new Option(result.getInt("id"), result.getString("description"),result.getDouble("prix"));
+		return new Option(result.getInt("id"), result.getString("description"), result.getDouble("prix"));
+	}
+
+	@Override
+	protected String getValeur(Option obj) {
+		return "'" + obj.getNom() + "', '" + obj.getPrix() + "'";
+	}
+
+	@Override
+	protected String getColonnes() {
+		return "description, prix";
 	}
 
 };

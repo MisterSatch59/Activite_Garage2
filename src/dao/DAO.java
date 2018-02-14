@@ -33,12 +33,14 @@ public abstract class DAO<T> {
 
 	/**
 	 * Constructeur
-	 * @param conn connection à  la base de données
+	 * 
+	 * @param conn
+	 *            connection à la base de données
 	 */
 	public DAO(Connection conn) {
 		this.conn = conn;
 		T t = initT();
-		
+
 		if (t.getClass() == Marque.class) {
 			table = DatabaseTable.MARQUE.toString();
 		} else if (t.getClass() == Moteur.class) {
@@ -50,7 +52,6 @@ public abstract class DAO<T> {
 		} else if (t.getClass() == Vehicule.class) {
 			table = DatabaseTable.VEHICULE.toString();
 		}
-
 	}
 
 	/**
@@ -59,15 +60,38 @@ public abstract class DAO<T> {
 	 * @param obj
 	 *            objet à ajouter
 	 */
-	public abstract void ajouter(T obj);
+	public void ajouter(T obj) {
+		Statement state;
+		try {
+			state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			state.executeUpdate(
+					"INSERT INTO " + table + " (" + this.getColonnes() + ")  VALUES ( " + this.getValeur(obj) + " )");
+			state.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * Supprimer un objet à la base de données
 	 * 
 	 * @param obj
 	 *            objet à supprimer
+	 * @throws SQLException
+	 *             erreur SQL notament de type
+	 *             SQLIntegrityConstraintViolationException en cas de probléme
+	 *             d'intégrité dans la BDD (tentative de suppression d'un élément
+	 *             utilisé dans un autre endrois de la BDD)
+	 * @see SQLException
+	 * @see SQLIntegrityConstraintViolationException
 	 */
-	public abstract void supprimer(T obj);
+	public void supprimer(int id) throws SQLException {
+		Statement state;
+		state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		state.executeUpdate("DELETE FROM " + table + " WHERE id = " + id);
+
+		state.close();
+	}
 
 	/**
 	 * Obtenir la liste des Objet de type T de la base de données
@@ -79,7 +103,7 @@ public abstract class DAO<T> {
 		try {
 			Statement state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			ResultSet result = state.executeQuery("SELECT * FROM " + table);
-			
+
 			while (result.next()) {
 				T obj = getT(result);
 				list.add(obj);
@@ -87,7 +111,7 @@ public abstract class DAO<T> {
 
 			result.close();
 			state.close();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -127,7 +151,7 @@ public abstract class DAO<T> {
 	protected abstract T initT();
 
 	/**
-	 * retourne un objet T avec la ligne active du résultat
+	 * Retourne un objet T avec la ligne active du résultat
 	 * 
 	 * @param result
 	 *            resultat à utiliser
@@ -135,4 +159,8 @@ public abstract class DAO<T> {
 	 * @throws SQLException
 	 */
 	protected abstract T getT(ResultSet result) throws SQLException;
+
+	protected abstract String getValeur(T obj);
+
+	protected abstract String getColonnes();
 };

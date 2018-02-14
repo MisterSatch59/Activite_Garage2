@@ -18,25 +18,23 @@ public class DAOMarque extends DAO<Marque> {
 	}
 
 	@Override
-	public void ajouter(Marque obj) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void supprimer(Marque obj) {
-		// TODO Auto-generated method stub
-
-	}
-	
-	@Override
 	protected Marque getT(ResultSet result) throws SQLException {
-		return new Marque(result.getInt("id"),result.getString("nom"));
+		return new Marque(result.getInt("id"), result.getString("nom"));
 	}
 
 	@Override
 	protected Marque initT() {
 		return new Marque();
+	}
+
+	@Override
+	protected String getValeur(Marque obj) {
+		return "'" + obj.getNom().toUpperCase() + "'";
+	}
+
+	@Override
+	protected String getColonnes() {
+		return "nom";
 	}
 
 };
