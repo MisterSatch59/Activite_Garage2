@@ -1,13 +1,14 @@
-package dao;
+package com.garage.modele.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import voiture.moteur.Moteur;
-import voiture.moteur.TypeMoteur;
+
+import com.garage.modele.voiture.moteur.Moteur;
+import com.garage.modele.voiture.moteur.TypeMoteur;
 
 /**
- * DAO associé au JavaBean Marque
+ * DAO associé au JavaBean Moteur
  * 
  * @author Oltenos
  * @version 1.0

@@ -1,8 +1,6 @@
-package dao;
+package com.garage.modele.dao;
 
 import java.sql.Connection;
-
-import fr.ocr.sql.HsqldbConnection;
 
 /**
  * Factory des classes DAO

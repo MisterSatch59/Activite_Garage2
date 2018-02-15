@@ -8,38 +8,42 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
-
-import dao.DAO;
-import dao.DAOFactory;
-import voiture.Marque;
-import voiture.Vehicule;
-import voiture.moteur.Moteur;
-import voiture.moteur.TypeMoteur;
-import voiture.option.Option;
+import com.garage.modele.dao.DAO;
+import com.garage.modele.dao.DAOFactory;
+import com.garage.modele.voiture.Marque;
+import com.garage.modele.voiture.Vehicule;
+import com.garage.modele.voiture.moteur.Moteur;
+import com.garage.modele.voiture.option.Option;
 
 public class Main {
 	public static void main(String[] args) {
-/*
-		DAO<Moteur> dao = DAOFactory.getDAOMoteur();
-		Moteur moteur = dao.info(4);
+		
+		try {
 
-		DAO<Marque> dao2 = DAOFactory.getDAOMarque();
-		Marque marque = dao2.info(1);
+			DAO<Moteur> dao = DAOFactory.getDAOMoteur();
+			Moteur moteur;
 
-		Vehicule v = new Vehicule(0, "208", marque, moteur, 45000d);
+			moteur = dao.info(4);
 
-		DAO<Option> dao4 = DAOFactory.getDAOOption();
+			DAO<Marque> dao2 = DAOFactory.getDAOMarque();
+			Marque marque = dao2.info(1);
 
-		for (int i = 0; i < 5; i++) {
-			v.addOption(dao4.info(i));
+			Vehicule v = new Vehicule(0, "208", marque, moteur, 45000d);
+
+			DAO<Option> dao4 = DAOFactory.getDAOOption();
+
+			for (int i = 0; i < 5; i++) {
+				v.addOption(dao4.info(i));
+			}
+
+			System.out.println(v);
+
+			DAO<Vehicule> dao3 = DAOFactory.getDAOVehicule();
+			dao3.ajouter(v);
+		} catch (SQLException e2) {
+			e2.printStackTrace();
 		}
 
-		System.out.println(v);
-
-		DAO<Vehicule> dao3 = DAOFactory.getDAOVehicule();
-		dao3.ajouter(v);
-*/
 		System.out.println("\n-------------------------------------------------------------------------------------------------------------------------------------\n");
 
 		String path = "";

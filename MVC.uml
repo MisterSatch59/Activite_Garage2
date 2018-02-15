@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_xETaoBF2EeivPvkNQTDlpg" name="MVC">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Z5P7UBJdEei7A-ctFtCKrQ" name="Activite_Garage2">
+      <packagedElement xmi:type="uml:Package" xmi:id="_Z5ZFQBJdEei7A-ctFtCKrQ" name="com">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Z5ZsUBJdEei7A-ctFtCKrQ" name="garage">
+          <packagedElement xmi:type="uml:Package" xmi:id="_Z5ZsURJdEei7A-ctFtCKrQ" name="modele"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_iFJlwBJdEei7A-ctFtCKrQ" name="controleur">
+            <packagedElement xmi:type="uml:Class" xmi:id="_iFMpEBJdEei7A-ctFtCKrQ" name="Controleur" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_iFargBJdEei7A-ctFtCKrQ" name="modele" visibility="private" type="_Z5cIkBJdEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_iFhZMBJdEei7A-ctFtCKrQ" name="Controleur" specification="_iFb5oBJdEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.modele = modele;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_iFlDkBJdEei7A-ctFtCKrQ" name="supprimer" specification="_iFjOYBJdEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    if (o.getClass() == Marque.class) {&#xD;
+        modele.supprimer(DatabaseTable.MARQUE, ((Marque) o).getId());&#xD;
+    } else if (o.getClass() == Moteur.class) {&#xD;
+        modele.supprimer(DatabaseTable.MOTEUR, ((Moteur) o).getId());&#xD;
+    } else if (o.getClass() == TypeMoteur.class) {&#xD;
+        modele.supprimer(DatabaseTable.TYPEMOTEUR, ((TypeMoteur) o).getId());&#xD;
+    } else if (o.getClass() == Vehicule.class) {&#xD;
+        modele.supprimer(DatabaseTable.VEHICULE, ((Vehicule) o).getId());&#xD;
+    } else if (o.getClass() == Option.class) {&#xD;
+        modele.supprimer(DatabaseTable.OPTION, ((Option) o).getId());&#xD;
+    } else {&#xD;
+        modele.setErreur(&quot;Erreur lors de la suppression d'un élément, l'élément n'a pas été supprimé&quot;);&#xD;
+    }&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_iFpVABJdEei7A-ctFtCKrQ" name="ajouter" specification="_iFm4wBJdEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    if (o.getClass() == Marque.class) {&#xD;
+        modele.ajouter(DatabaseTable.MARQUE, o);&#xD;
+    } else if (o.getClass() == Moteur.class) {&#xD;
+        modele.ajouter(DatabaseTable.MOTEUR, o);&#xD;
+    } else if (o.getClass() == TypeMoteur.class) {&#xD;
+        modele.ajouter(DatabaseTable.TYPEMOTEUR, o);&#xD;
+    } else if (o.getClass() == Vehicule.class) {&#xD;
+        modele.ajouter(DatabaseTable.VEHICULE, o);&#xD;
+    } else if (o.getClass() == Option.class) {&#xD;
+        modele.ajouter(DatabaseTable.MOTEUR, o);&#xD;
+    } else {&#xD;
+        modele.setErreur(&quot;Erreur lors de la création d'un élément, l'élément n'a pas été créé&quot;);&#xD;
+    }&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_iFb5oBJdEei7A-ctFtCKrQ" name="Controleur" visibility="public" method="_iFhZMBJdEei7A-ctFtCKrQ">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_iFgyIBJdEei7A-ctFtCKrQ" name="modele" type="_Z5cIkBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_iFjOYBJdEei7A-ctFtCKrQ" name="supprimer" visibility="public" method="_iFlDkBJdEei7A-ctFtCKrQ">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_iFj1cBJdEei7A-ctFtCKrQ" name="o" type="_Z6TrQBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_iFm4wBJdEei7A-ctFtCKrQ" name="ajouter" visibility="public" method="_iFpVABJdEei7A-ctFtCKrQ">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_iFot8BJdEei7A-ctFtCKrQ" name="o" type="_Z6TrQBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_1Jtb0BJdEei7A-ctFtCKrQ" client="_iFMpEBJdEei7A-ctFtCKrQ" supplier="_Z5cIkBJdEei7A-ctFtCKrQ"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_kZ5PkBJdEei7A-ctFtCKrQ" name="observer">
+            <packagedElement xmi:type="uml:Interface" xmi:id="_kZ7r0BJdEei7A-ctFtCKrQ" name="Observable" visibility="public">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_kaAkUBJdEei7A-ctFtCKrQ" name="addObserver" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_kaBLYBJdEei7A-ctFtCKrQ" name="obs" type="_k_WtEBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_kaBycBJdEei7A-ctFtCKrQ" name="updateObserverWithErrorMessage" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_kaDAkBJdEei7A-ctFtCKrQ" name="updateObserver" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_kaDnoBJdEei7A-ctFtCKrQ" name="delObserver" visibility="public"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_k_WtEBJdEei7A-ctFtCKrQ" name="Observer" visibility="public">
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_k_aXcBJdEei7A-ctFtCKrQ" name="update" visibility="public"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_k_a-gBJdEei7A-ctFtCKrQ" name="updateWithErrorMessage" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_k_blkBJdEei7A-ctFtCKrQ" name="message" type="_Z5xfwRJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_RBwEQBJfEei7A-ctFtCKrQ" client="_kZ7r0BJdEei7A-ctFtCKrQ" supplier="_k_WtEBJdEei7A-ctFtCKrQ"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_Obu5sBJeEei7A-ctFtCKrQ" name="vue">
+            <packagedElement xmi:type="uml:Class" xmi:id="_Obwu4BJeEei7A-ctFtCKrQ" name="Fenetre" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_Ob1nYBJeEei7A-ctFtCKrQ" name="garage" visibility="private" type="_ObykEBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Ob4qsBJeEei7A-ctFtCKrQ" name="setMain" specification="_Ob21gBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.garage = garage;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Ob6f4BJeEei7A-ctFtCKrQ" name="voirVehicules" specification="_Ob540BJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    garage.setVueActive(VueActive.VEHICULE);&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Ob-KQBJeEei7A-ctFtCKrQ" name="voirMarques" specification="_Ob9jMBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    garage.setVueActive(VueActive.MARQUE);&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Ob_YYRJeEei7A-ctFtCKrQ" name="voirOptions" specification="_Ob_YYBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    garage.setVueActive(VueActive.OPTION);&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OcAmgBJeEei7A-ctFtCKrQ" name="voirMoteurs" specification="_Ob__cBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    garage.setVueActive(VueActive.MOTEUR);&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OcB0oRJeEei7A-ctFtCKrQ" name="voirTypesMoteur" specification="_OcB0oBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    garage.setVueActive(VueActive.TYPEMOTEUR);&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OcDCwRJeEei7A-ctFtCKrQ" name="ajouterVehicules" specification="_OcDCwBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+// TODO&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OcEQ4RJeEei7A-ctFtCKrQ" name="ajouterMarques" specification="_OcEQ4BJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+// TODO&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OcHUMBJeEei7A-ctFtCKrQ" name="ajouterOptions" specification="_OcGGEBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+// TODO&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OcIiUBJeEei7A-ctFtCKrQ" name="ajouterMoteurs" specification="_OcH7QBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+// TODO&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OcKXgBJeEei7A-ctFtCKrQ" name="ajouterTypesMoteur" specification="_OcJwcBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+// TODO&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ob21gBJeEei7A-ctFtCKrQ" name="setMain" visibility="public" method="_Ob4qsBJeEei7A-ctFtCKrQ">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ob4DoBJeEei7A-ctFtCKrQ" name="garage" type="_ObykEBJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ob540BJeEei7A-ctFtCKrQ" name="voirVehicules" visibility="private" method="_Ob6f4BJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ob9jMBJeEei7A-ctFtCKrQ" name="voirMarques" visibility="private" method="_Ob-KQBJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ob_YYBJeEei7A-ctFtCKrQ" name="voirOptions" visibility="private" method="_Ob_YYRJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Ob__cBJeEei7A-ctFtCKrQ" name="voirMoteurs" visibility="private" method="_OcAmgBJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_OcB0oBJeEei7A-ctFtCKrQ" name="voirTypesMoteur" visibility="private" method="_OcB0oRJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_OcDCwBJeEei7A-ctFtCKrQ" name="ajouterVehicules" visibility="private" method="_OcDCwRJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_OcEQ4BJeEei7A-ctFtCKrQ" name="ajouterMarques" visibility="private" method="_OcEQ4RJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_OcGGEBJeEei7A-ctFtCKrQ" name="ajouterOptions" visibility="private" method="_OcHUMBJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_OcH7QBJeEei7A-ctFtCKrQ" name="ajouterMoteurs" visibility="private" method="_OcIiUBJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_OcJwcBJeEei7A-ctFtCKrQ" name="ajouterTypesMoteur" visibility="private" method="_OcKXgBJeEei7A-ctFtCKrQ"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_ml7M0BJeEei7A-ctFtCKrQ" name="Table" visibility="public" isAbstract="true">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_mmAsYBJeEei7A-ctFtCKrQ" name="garage" visibility="protected" type="_TVgsEBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_mmB6gBJeEei7A-ctFtCKrQ" name="tableBDD" visibility="protected" type="_Z540gBJdEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_mmIBIBJeEei7A-ctFtCKrQ" name="table" visibility="protected" type="_mmDIoRJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mmMSkBJeEei7A-ctFtCKrQ" name="setMain" specification="_mmJPQBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.garage = garage;&#xD;
+    this.tableBDD = tableBDD;&#xD;
+    ObservableList&lt;T> list = FXCollections.observableArrayList();&#xD;
+    list.addAll((List&lt;T>) (this.garage.getModele().getTable(this.tableBDD)));&#xD;
+    table.setItems(list);&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_mmJPQBJeEei7A-ctFtCKrQ" name="setMain" visibility="public" method="_mmMSkBJeEei7A-ctFtCKrQ">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_mmKdYBJeEei7A-ctFtCKrQ" name="garage" type="_TVgsEBJeEei7A-ctFtCKrQ"/>
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_mmLrgBJeEei7A-ctFtCKrQ" name="tableBDD" type="_Z540gBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_mmNgsBJeEei7A-ctFtCKrQ" name="SupprButtonCell" visibility="protected">
+                <generalization xmi:type="uml:Generalization" xmi:id="_mmTAQBJeEei7A-ctFtCKrQ" general="_mmOu0BJeEei7A-ctFtCKrQ"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_mmWqoBJeEei7A-ctFtCKrQ" name="cellButton" visibility="private" type="_mmUOYBJeEei7A-ctFtCKrQ" isUnique="false">
+                  <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_mmYf0BJeEei7A-ctFtCKrQ" name="defaultValue">
+                    <language>JAVA</language>
+                    <body>new Button(&quot;Supprimer&quot;)</body>
+                  </defaultValue>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mmfNgBJeEei7A-ctFtCKrQ" name="SupprButtonCell" specification="_mmbjIBJeEei7A-ctFtCKrQ">
+                  <language>JAVA</language>
+                  <body>&#xD;
+    cellButton.setOnAction(new EventHandler&lt;ActionEvent>() {&#xD;
+&#xD;
+        @Override&#xD;
+        public void handle(ActionEvent t) {&#xD;
+            @SuppressWarnings(&quot;unchecked&quot;) T t1 = (T) getTableRow().getItem();&#xD;
+            garage.getControleur().supprimer(t1);&#xD;
+        }&#xD;
+    });&#xD;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_mmlUIBJeEei7A-ctFtCKrQ" name="updateItem" specification="_mmhCsBJeEei7A-ctFtCKrQ">
+                  <language>JAVA</language>
+                  <body>&#xD;
+    super.updateItem(b, empty);&#xD;
+    if (!empty) {&#xD;
+        setGraphic(cellButton);&#xD;
+    }&#xD;
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_mmbjIBJeEei7A-ctFtCKrQ" name="SupprButtonCell" visibility="private" method="_mmfNgBJeEei7A-ctFtCKrQ"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_mmhCsBJeEei7A-ctFtCKrQ" name="updateItem" visibility="protected" method="_mmlUIBJeEei7A-ctFtCKrQ">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_mmhpwBJeEei7A-ctFtCKrQ" name="b">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_f-GnEPaLEeW5KOK8aDMdgA"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_mmje8BJeEei7A-ctFtCKrQ" name="empty">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+                  </ownedParameter>
+                </ownedOperation>
+              </nestedClassifier>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_s8K9MBJeEei7A-ctFtCKrQ" name="VehiculeTable" visibility="public">
+              <generalization xmi:type="uml:Generalization" xmi:id="_s8MyYBJeEei7A-ctFtCKrQ" general="_ml7M0BJeEei7A-ctFtCKrQ"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_s8QcwBJeEei7A-ctFtCKrQ" name="id" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_s8SR8BJeEei7A-ctFtCKrQ" name="marque" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_s8UHIBJeEei7A-ctFtCKrQ" name="moteur" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_s8YYkBJeEei7A-ctFtCKrQ" name="prix" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_s8ZmsBJeEei7A-ctFtCKrQ" name="nom" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_s8a00BJeEei7A-ctFtCKrQ" name="action1" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_s8dREBJeEei7A-ctFtCKrQ" name="action2" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_s8higBJeEei7A-ctFtCKrQ" name="initialize" specification="_s8g7cBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    id.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getId()));&#xD;
+    marque.setCellValueFactory( cellData -> new SimpleStringProperty(cellData.getValue().getMarque().getNom()));&#xD;
+    moteur.setCellValueFactory( cellData -> new SimpleStringProperty(cellData.getValue().getMoteur().toString()));&#xD;
+    prix.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getPrixTotal()));&#xD;
+    nom.setCellValueFactory( cellData -> new SimpleStringProperty(cellData.getValue().getNom()));&#xD;
+    action1.setCellFactory( cellData -> new DetailButtonCell());&#xD;
+    action2.setCellFactory( cellData -> new SupprButtonCell());&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_s8g7cBJeEei7A-ctFtCKrQ" name="initialize" visibility="protected" method="_s8higBJeEei7A-ctFtCKrQ"/>
+              <nestedClassifier xmi:type="uml:Class" xmi:id="_s8iwoBJeEei7A-ctFtCKrQ" name="DetailButtonCell" visibility="private">
+                <generalization xmi:type="uml:Generalization" xmi:id="_s8j-wBJeEei7A-ctFtCKrQ" general="_mmOu0BJeEei7A-ctFtCKrQ"/>
+                <ownedAttribute xmi:type="uml:Property" xmi:id="_s8kl0BJeEei7A-ctFtCKrQ" name="cellButton" visibility="private" type="_mmUOYBJeEei7A-ctFtCKrQ" isUnique="false">
+                  <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_s8lM4BJeEei7A-ctFtCKrQ" name="defaultValue">
+                    <language>JAVA</language>
+                    <body>new Button(&quot;Détails des options&quot;)</body>
+                  </defaultValue>
+                </ownedAttribute>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_s8qFYBJeEei7A-ctFtCKrQ" name="DetailButtonCell" specification="_s8lz8BJeEei7A-ctFtCKrQ">
+                  <language>JAVA</language>
+                  <body>&#xD;
+    cellButton.setOnAction(new EventHandler&lt;ActionEvent>() {&#xD;
+&#xD;
+        @Override&#xD;
+        public void handle(ActionEvent t) {&#xD;
+            Vehicule v = (Vehicule) getTableRow().getItem();&#xD;
+            FXMLLoader loader = new FXMLLoader();&#xD;
+            loader.setLocation(Garage2.class.getResource(&quot;vue/OptionsFenetre.fxml&quot;));&#xD;
+            try {&#xD;
+                BorderPane page = (BorderPane) loader.load();&#xD;
+                Stage stageDialogue = new Stage();&#xD;
+                stageDialogue.setTitle(&quot;Options&quot;);&#xD;
+                stageDialogue.initModality(Modality.WINDOW_MODAL);&#xD;
+                stageDialogue.initOwner(garage.getStage());&#xD;
+                Scene scene = new Scene(page);&#xD;
+                stageDialogue.setScene(scene);&#xD;
+                OptionsFenetre controller = loader.getController();&#xD;
+                controller.setVehicule(v);&#xD;
+                controller.setStage(stageDialogue);&#xD;
+                stageDialogue.showAndWait();&#xD;
+            } catch (IOException e) {&#xD;
+                e.printStackTrace();&#xD;
+            }&#xD;
+        }&#xD;
+    });&#xD;
+</body>
+                </ownedBehavior>
+                <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_s8shoBJeEei7A-ctFtCKrQ" name="updateItem" specification="_s8rTgBJeEei7A-ctFtCKrQ">
+                  <language>JAVA</language>
+                  <body>&#xD;
+    super.updateItem(t, empty);&#xD;
+    if (!empty) {&#xD;
+        setGraphic(cellButton);&#xD;
+    }&#xD;
+</body>
+                </ownedBehavior>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_s8lz8BJeEei7A-ctFtCKrQ" name="DetailButtonCell" visibility="private" method="_s8qFYBJeEei7A-ctFtCKrQ"/>
+                <ownedOperation xmi:type="uml:Operation" xmi:id="_s8rTgBJeEei7A-ctFtCKrQ" name="updateItem" visibility="protected" method="_s8shoBJeEei7A-ctFtCKrQ">
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_s8rTgRJeEei7A-ctFtCKrQ" name="t">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_f-GnEPaLEeW5KOK8aDMdgA"/>
+                  </ownedParameter>
+                  <ownedParameter xmi:type="uml:Parameter" xmi:id="_s8r6kBJeEei7A-ctFtCKrQ" name="empty">
+                    <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+                  </ownedParameter>
+                </ownedOperation>
+              </nestedClassifier>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_-kEA8BJeEei7A-ctFtCKrQ" name="OptionsFenetre" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_-kHrUBJeEei7A-ctFtCKrQ" name="titre" visibility="private" type="_-kEoABJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_-kISYBJeEei7A-ctFtCKrQ" name="table" visibility="private" type="_mmDIoRJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_-kLVsBJeEei7A-ctFtCKrQ" name="id" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_-kL8wBJeEei7A-ctFtCKrQ" name="description" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_-kNK4BJeEei7A-ctFtCKrQ" name="prix" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_-kNx8BJeEei7A-ctFtCKrQ" name="stageDialogue" visibility="private" type="_TVpO8BJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_-kPAEBJeEei7A-ctFtCKrQ" name="quitter" specification="_-kOZABJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    stageDialogue.close();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_-kQOMRJeEei7A-ctFtCKrQ" name="initialize" specification="_-kQOMBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    id.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getId()));&#xD;
+    description.setCellValueFactory( cellData -> new SimpleStringProperty(cellData.getValue().getNom()));&#xD;
+    prix.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getPrix()));&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_-kYKABJeEei7A-ctFtCKrQ" name="setVehicule" specification="_-kWU0BJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    titre.setText(&quot;Option de &quot; + vehicule.getNom());&#xD;
+    ObservableList&lt;Option> list = FXCollections.observableArrayList();&#xD;
+    list.addAll((List&lt;Option>) (vehicule.getOptions()));&#xD;
+    table.setItems(list);&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_-kb0YBJeEei7A-ctFtCKrQ" name="setStage" specification="_-kZ_MBJeEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.stageDialogue = stageDialogue;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_-kOZABJeEei7A-ctFtCKrQ" name="quitter" visibility="public" method="_-kPAEBJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_-kQOMBJeEei7A-ctFtCKrQ" name="initialize" visibility="protected" method="_-kQOMRJeEei7A-ctFtCKrQ"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_-kWU0BJeEei7A-ctFtCKrQ" name="setVehicule" visibility="public" method="_-kYKABJeEei7A-ctFtCKrQ">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_-kXi8BJeEei7A-ctFtCKrQ" name="vehicule" type="_-kSDYBJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_-kZ_MBJeEei7A-ctFtCKrQ" name="setStage" visibility="public" method="_-kb0YBJeEei7A-ctFtCKrQ">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_-kamQBJeEei7A-ctFtCKrQ" name="stageDialogue" type="_TVpO8BJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_ICLhMBJfEei7A-ctFtCKrQ" client="_-kEA8BJeEei7A-ctFtCKrQ" supplier="_s8K9MBJeEei7A-ctFtCKrQ"/>
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_LxnAUBJfEei7A-ctFtCKrQ" client="_ml7M0BJeEei7A-ctFtCKrQ" supplier="_TVgsEBJeEei7A-ctFtCKrQ"/>
+            <packagedElement xmi:type="uml:Dependency" xmi:id="_MVw2QBJfEei7A-ctFtCKrQ" client="_Obwu4BJeEei7A-ctFtCKrQ" supplier="_TVgsEBJeEei7A-ctFtCKrQ"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_eO5bABJfEei7A-ctFtCKrQ" name="MarqueTable" visibility="public">
+              <generalization xmi:type="uml:Generalization" xmi:id="_eO6pIBJfEei7A-ctFtCKrQ" general="_ml7M0BJeEei7A-ctFtCKrQ"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_eO8eUBJfEei7A-ctFtCKrQ" name="id" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_eO9scBJfEei7A-ctFtCKrQ" name="nom" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_eO9scRJfEei7A-ctFtCKrQ" name="action" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_eO-TgBJfEei7A-ctFtCKrQ" name="initialize" specification="_eO9schJfEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    id.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getId()));&#xD;
+    nom.setCellValueFactory( cellData -> new SimpleStringProperty(cellData.getValue().getNom()));&#xD;
+    action.setCellFactory( cellData -> new SupprButtonCell());&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_eO9schJfEei7A-ctFtCKrQ" name="initialize" visibility="private" method="_eO-TgBJfEei7A-ctFtCKrQ"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_kDJRkBJfEei7A-ctFtCKrQ" name="MoteurTable" visibility="public">
+              <generalization xmi:type="uml:Generalization" xmi:id="_kDLt0BJfEei7A-ctFtCKrQ" general="_ml7M0BJeEei7A-ctFtCKrQ"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_kDMU4BJfEei7A-ctFtCKrQ" name="id" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_kDM78BJfEei7A-ctFtCKrQ" name="cylindre" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_kDM78RJfEei7A-ctFtCKrQ" name="moteur" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_kDNjABJfEei7A-ctFtCKrQ" name="prix" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_kDOKEBJfEei7A-ctFtCKrQ" name="action" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_kDP_QBJfEei7A-ctFtCKrQ" name="initialize" specification="_kDPYMBJfEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    id.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getId()));&#xD;
+    cylindre.setCellValueFactory( cellData -> new SimpleStringProperty(cellData.getValue().getCylindre()));&#xD;
+    moteur.setCellValueFactory( cellData -> new SimpleStringProperty(cellData.getValue().getType().getNom()));&#xD;
+    prix.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getPrix()));&#xD;
+    action.setCellFactory( cellData -> new SupprButtonCell());&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_kDPYMBJfEei7A-ctFtCKrQ" name="initialize" visibility="private" method="_kDP_QBJfEei7A-ctFtCKrQ"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_qjD7UBJfEei7A-ctFtCKrQ" name="OptionTable" visibility="public">
+              <generalization xmi:type="uml:Generalization" xmi:id="_qjEiYBJfEei7A-ctFtCKrQ" general="_ml7M0BJeEei7A-ctFtCKrQ"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_qjFJcBJfEei7A-ctFtCKrQ" name="id" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_qjHlsBJfEei7A-ctFtCKrQ" name="description" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_qjIMwBJfEei7A-ctFtCKrQ" name="prix" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_qjIz0BJfEei7A-ctFtCKrQ" name="action" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_qjIz0hJfEei7A-ctFtCKrQ" name="initialize" specification="_qjIz0RJfEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    id.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getId()));&#xD;
+    description.setCellValueFactory( cellData -> new SimpleStringProperty(cellData.getValue().getNom()));&#xD;
+    prix.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getPrix()));&#xD;
+    action.setCellFactory( cellData -> new SupprButtonCell());&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_qjIz0RJfEei7A-ctFtCKrQ" name="initialize" visibility="private" method="_qjIz0hJfEei7A-ctFtCKrQ"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_x2ByoBJfEei7A-ctFtCKrQ" name="TypeMoteurTable" visibility="public">
+              <generalization xmi:type="uml:Generalization" xmi:id="_x2DAwBJfEei7A-ctFtCKrQ" general="_ml7M0BJeEei7A-ctFtCKrQ"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_x2E18BJfEei7A-ctFtCKrQ" name="id" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_x2FdABJfEei7A-ctFtCKrQ" name="description" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_x2GEEBJfEei7A-ctFtCKrQ" name="action" visibility="private" type="_s8NZcBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_x2GEEhJfEei7A-ctFtCKrQ" name="initialize" specification="_x2GEERJfEei7A-ctFtCKrQ">
+                <language>JAVA</language>
+                <body>&#xD;
+    id.setCellValueFactory( cellData -> new SimpleStringProperty(&quot;&quot; + cellData.getValue().getId()));&#xD;
+    description.setCellValueFactory( cellData -> new SimpleStringProperty(cellData.getValue().getNom()));&#xD;
+    action.setCellFactory( cellData -> new SupprButtonCell());&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_x2GEERJfEei7A-ctFtCKrQ" name="initialize" visibility="private" method="_x2GEEhJfEei7A-ctFtCKrQ"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Enumeration" xmi:id="_621EwBJfEei7A-ctFtCKrQ" name="VueActive" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_624IERJfEei7A-ctFtCKrQ" name="adresse" visibility="private" type="_Z5xfwRJdEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_625WMBJfEei7A-ctFtCKrQ" name="VueActive" visibility="private">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_62-OsBJfEei7A-ctFtCKrQ" name="adresse" type="_Z5xfwRJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_62_c0BJfEei7A-ctFtCKrQ" name="getAdresse" visibility="public">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_63CgIBJfEei7A-ctFtCKrQ" type="_Z5xfwRJdEei7A-ctFtCKrQ" direction="return"/>
+              </ownedOperation>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_622S4BJfEei7A-ctFtCKrQ" name="MARQUE">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_62258BJfEei7A-ctFtCKrQ" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;vue/MarqueTable.fxml&quot;</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_62258RJfEei7A-ctFtCKrQ" name="TYPEMOTEUR">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_62258hJfEei7A-ctFtCKrQ" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;vue/TypeMoteurTable.fxml&quot;</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_62258xJfEei7A-ctFtCKrQ" name="MOTEUR">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_623hABJfEei7A-ctFtCKrQ" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;vue/MoteurTable.fxml&quot;</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_623hARJfEei7A-ctFtCKrQ" name="VEHICULE">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_623hAhJfEei7A-ctFtCKrQ" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;vue/VehiculeTable.fxml&quot;</body>
+                </specification>
+              </ownedLiteral>
+              <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_623hAxJfEei7A-ctFtCKrQ" name="OPTION">
+                <specification xmi:type="uml:OpaqueExpression" xmi:id="_624IEBJfEei7A-ctFtCKrQ" name="specification">
+                  <language>JAVA</language>
+                  <body>&quot;vue/OptionTable.fxml&quot;</body>
+                </specification>
+              </ownedLiteral>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_TVgsEBJeEei7A-ctFtCKrQ" name="Garage2" visibility="public">
+            <generalization xmi:type="uml:Generalization" xmi:id="_TVmLoBJeEei7A-ctFtCKrQ" general="_TVihQRJeEei7A-ctFtCKrQ"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_TVtgYBJeEei7A-ctFtCKrQ" name="stagePrincipal" visibility="private" type="_TVpO8BJeEei7A-ctFtCKrQ" isUnique="false"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_TVznABJeEei7A-ctFtCKrQ" name="conteneurPrincipal" visibility="private" type="_TVwjsBJeEei7A-ctFtCKrQ" isUnique="false"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_TV1cMBJeEei7A-ctFtCKrQ" name="modele" visibility="private" type="_Z5cIkBJdEei7A-ctFtCKrQ" isUnique="false">
+              <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_TV3RYBJeEei7A-ctFtCKrQ" name="defaultValue">
+                <language>JAVA</language>
+                <body>new Modele()</body>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_TV7i0BJeEei7A-ctFtCKrQ" name="controleur" visibility="private" type="_iFMpEBJdEei7A-ctFtCKrQ" isUnique="false">
+              <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_TV8w8BJeEei7A-ctFtCKrQ" name="defaultValue">
+                <language>JAVA</language>
+                <body>new Controleur(modele)</body>
+              </defaultValue>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_TWPr4BJeEei7A-ctFtCKrQ" name="vueActive" visibility="private" type="_TWAbUBJeEei7A-ctFtCKrQ" isUnique="false">
+              <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_TWQ6ABJeEei7A-ctFtCKrQ" name="defaultValue">
+                <language>JAVA</language>
+                <body>VueActive.VEHICULE</body>
+              </defaultValue>
+            </ownedAttribute>
+            <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_TVnZwBJeEei7A-ctFtCKrQ" name="" client="_TVgsEBJeEei7A-ctFtCKrQ" supplier="_k_WtEBJdEei7A-ctFtCKrQ" contract="_k_WtEBJdEei7A-ctFtCKrQ"/>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TWVLcBJeEei7A-ctFtCKrQ" name="start" specification="_TWRhEBJeEei7A-ctFtCKrQ">
+              <language>JAVA</language>
+              <body>&#xD;
+    modele.addObserver(this);&#xD;
+    this.stagePrincipal = primaryStage;&#xD;
+    stagePrincipal.setTitle(&quot;Garage&quot;);&#xD;
+    FXMLLoader loader = new FXMLLoader();&#xD;
+    loader.setLocation(Garage2.class.getResource(&quot;vue/Fenetre.fxml&quot;));&#xD;
+    try {&#xD;
+        conteneurPrincipal = (BorderPane) loader.load();&#xD;
+        Scene scene = new Scene(conteneurPrincipal);&#xD;
+        stagePrincipal.setScene(scene);&#xD;
+        stagePrincipal.show();&#xD;
+    } catch (IOException e) {&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    Fenetre controller = loader.getController();&#xD;
+    controller.setMain(this);&#xD;
+    this.update();&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TWYOwBJeEei7A-ctFtCKrQ" name="getModele" specification="_TWWZkBJeEei7A-ctFtCKrQ">
+              <language>JAVA</language>
+              <body>&#xD;
+    return modele;&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TWcgMBJeEei7A-ctFtCKrQ" name="main" specification="_TWZc4BJeEei7A-ctFtCKrQ">
+              <language>JAVA</language>
+              <body>&#xD;
+    launch(args);&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TWgKkBJeEei7A-ctFtCKrQ" name="getControleur" specification="_TWeVYBJeEei7A-ctFtCKrQ">
+              <language>JAVA</language>
+              <body>&#xD;
+    return controleur;&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TWh_wBJeEei7A-ctFtCKrQ" name="update" specification="_TWhYsBJeEei7A-ctFtCKrQ">
+              <language>JAVA</language>
+              <body>&#xD;
+    FXMLLoader load = new FXMLLoader();&#xD;
+    load.setLocation(Garage2.class.getResource(vueActive.getAdresse()));&#xD;
+    try {&#xD;
+        AnchorPane conteneur = (AnchorPane) load.load();&#xD;
+        conteneurPrincipal.setCenter(conteneur);&#xD;
+    } catch (IOException e) {&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    switch(vueActive) {&#xD;
+        case MARQUE:&#xD;
+            MarqueTable control1 = load.getController();&#xD;
+            control1.setMain(this, DatabaseTable.MARQUE);&#xD;
+            break;&#xD;
+        case TYPEMOTEUR:&#xD;
+            TypeMoteurTable control2 = load.getController();&#xD;
+            control2.setMain(this, DatabaseTable.TYPEMOTEUR);&#xD;
+            break;&#xD;
+        case MOTEUR:&#xD;
+            MoteurTable control3 = load.getController();&#xD;
+            control3.setMain(this, DatabaseTable.MOTEUR);&#xD;
+            break;&#xD;
+        case OPTION:&#xD;
+            OptionTable control4 = load.getController();&#xD;
+            control4.setMain(this, DatabaseTable.OPTION);&#xD;
+            break;&#xD;
+        case VEHICULE:&#xD;
+            VehiculeTable control5 = load.getController();&#xD;
+            control5.setMain(this, DatabaseTable.VEHICULE);&#xD;
+            break;&#xD;
+        default:&#xD;
+            modele.setErreur(&quot;Erreur de chargement de la page demandé&quot;);&#xD;
+            break;&#xD;
+    }&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TWlDEBJeEei7A-ctFtCKrQ" name="updateWithErrorMessage" specification="_TWj08BJeEei7A-ctFtCKrQ">
+              <language>JAVA</language>
+              <body>&#xD;
+    Alert probleme = new Alert(AlertType.ERROR);&#xD;
+    probleme.setTitle(&quot;Erreur&quot;);&#xD;
+    probleme.setHeaderText(message);&#xD;
+    probleme.showAndWait();&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TWp7kBJeEei7A-ctFtCKrQ" name="setVueActive" specification="_TWmRMBJeEei7A-ctFtCKrQ">
+              <language>JAVA</language>
+              <body>&#xD;
+    this.vueActive = nouvelleVue;&#xD;
+    this.update();&#xD;
+</body>
+            </ownedBehavior>
+            <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_TWu0EBJeEei7A-ctFtCKrQ" name="getStage" specification="_TWqioBJeEei7A-ctFtCKrQ">
+              <language>JAVA</language>
+              <body>&#xD;
+    return stagePrincipal;&#xD;
+</body>
+            </ownedBehavior>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_TWRhEBJeEei7A-ctFtCKrQ" name="start" visibility="public" method="_TWVLcBJeEei7A-ctFtCKrQ">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_TWSvMBJeEei7A-ctFtCKrQ" name="primaryStage" type="_TVpO8BJeEei7A-ctFtCKrQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_TWWZkBJeEei7A-ctFtCKrQ" name="getModele" visibility="public" method="_TWYOwBJeEei7A-ctFtCKrQ">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_TWXnsBJeEei7A-ctFtCKrQ" type="_Z5cIkBJdEei7A-ctFtCKrQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_TWZc4BJeEei7A-ctFtCKrQ" name="main" visibility="public" isStatic="true" method="_TWcgMBJeEei7A-ctFtCKrQ">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_TWarABJeEei7A-ctFtCKrQ" name="args" type="_Z5xfwRJdEei7A-ctFtCKrQ">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_TWbSEBJeEei7A-ctFtCKrQ"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TWb5IBJeEei7A-ctFtCKrQ" value="*"/>
+              </ownedParameter>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_TWeVYBJeEei7A-ctFtCKrQ" name="getControleur" visibility="public" method="_TWgKkBJeEei7A-ctFtCKrQ">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_TWe8cBJeEei7A-ctFtCKrQ" type="_iFMpEBJdEei7A-ctFtCKrQ" direction="return"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_TWhYsBJeEei7A-ctFtCKrQ" name="update" visibility="public" method="_TWh_wBJeEei7A-ctFtCKrQ"/>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_TWj08BJeEei7A-ctFtCKrQ" name="updateWithErrorMessage" visibility="public" method="_TWlDEBJeEei7A-ctFtCKrQ">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_TWkcABJeEei7A-ctFtCKrQ" name="message" type="_Z5xfwRJdEei7A-ctFtCKrQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_TWmRMBJeEei7A-ctFtCKrQ" name="setVueActive" visibility="public" method="_TWp7kBJeEei7A-ctFtCKrQ">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_TWoGYBJeEei7A-ctFtCKrQ" name="nouvelleVue" type="_TWAbUBJeEei7A-ctFtCKrQ"/>
+            </ownedOperation>
+            <ownedOperation xmi:type="uml:Operation" xmi:id="_TWqioBJeEei7A-ctFtCKrQ" name="getStage" visibility="public" method="_TWu0EBJeEei7A-ctFtCKrQ">
+              <ownedParameter xmi:type="uml:Parameter" xmi:id="_TWuNABJeEei7A-ctFtCKrQ" type="_TWrJsBJeEei7A-ctFtCKrQ" direction="return"/>
+            </ownedOperation>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_PYTaMBJfEei7A-ctFtCKrQ" client="_TVgsEBJeEei7A-ctFtCKrQ" supplier="_iFMpEBJdEei7A-ctFtCKrQ"/>
+          <packagedElement xmi:type="uml:Dependency" xmi:id="_CH1NMBJgEei7A-ctFtCKrQ" client="_TVgsEBJeEei7A-ctFtCKrQ" supplier="_621EwBJfEei7A-ctFtCKrQ"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Z5dWsBJdEei7A-ctFtCKrQ" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_Z5d9wBJdEei7A-ctFtCKrQ" name="com">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Z5d9wRJdEei7A-ctFtCKrQ" name="garage">
+          <packagedElement xmi:type="uml:Package" xmi:id="_Z5d9whJdEei7A-ctFtCKrQ" name="observer">
+            <packagedElement xmi:type="uml:Class" xmi:id="_Z5iPMBJdEei7A-ctFtCKrQ" name="Observer"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_Z5oV0BJdEei7A-ctFtCKrQ" name="modele">
+            <packagedElement xmi:type="uml:Package" xmi:id="_Z5o84BJdEei7A-ctFtCKrQ" name="dao">
+              <packagedElement xmi:type="uml:Class" xmi:id="_Z5o84RJdEei7A-ctFtCKrQ" name="DAO"/>
+              <packagedElement xmi:type="uml:Class" xmi:id="_Z540gBJdEei7A-ctFtCKrQ" name="DatabaseTable"/>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Package" xmi:id="_-kRcUBJeEei7A-ctFtCKrQ" name="voiture">
+              <packagedElement xmi:type="uml:Class" xmi:id="_-kSDYBJeEei7A-ctFtCKrQ" name="Vehicule"/>
+            </packagedElement>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Class" xmi:id="_ObykEBJeEei7A-ctFtCKrQ" name="Garage2"/>
+          <packagedElement xmi:type="uml:Package" xmi:id="_TV-mIBJeEei7A-ctFtCKrQ" name="vue">
+            <packagedElement xmi:type="uml:Class" xmi:id="_TWAbUBJeEei7A-ctFtCKrQ" name="VueActive"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_TVh6MBJeEei7A-ctFtCKrQ" name="javafx">
+        <packagedElement xmi:type="uml:Package" xmi:id="_TVihQBJeEei7A-ctFtCKrQ" name="application">
+          <packagedElement xmi:type="uml:Class" xmi:id="_TVihQRJeEei7A-ctFtCKrQ" name="Application"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_TVoA0BJeEei7A-ctFtCKrQ" name="stage">
+          <packagedElement xmi:type="uml:Class" xmi:id="_TVpO8BJeEei7A-ctFtCKrQ" name="Stage"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_TWrJsBJeEei7A-ctFtCKrQ" name="Window"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_TVvVkBJeEei7A-ctFtCKrQ" name="scene">
+          <packagedElement xmi:type="uml:Package" xmi:id="_TVv8oBJeEei7A-ctFtCKrQ" name="layout">
+            <packagedElement xmi:type="uml:Class" xmi:id="_TVwjsBJeEei7A-ctFtCKrQ" name="BorderPane"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_mmDIoBJeEei7A-ctFtCKrQ" name="control">
+            <packagedElement xmi:type="uml:Class" xmi:id="_mmDIoRJeEei7A-ctFtCKrQ" name="TableView"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_mmOu0BJeEei7A-ctFtCKrQ" name="TableCell"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_mmUOYBJeEei7A-ctFtCKrQ" name="Button"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_s8NZcBJeEei7A-ctFtCKrQ" name="TableColumn"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_-kEoABJeEei7A-ctFtCKrQ" name="Label"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Z5wRoRJdEei7A-ctFtCKrQ" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_Z5w4sBJdEei7A-ctFtCKrQ" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_Z5xfwBJdEei7A-ctFtCKrQ" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_Z5xfwRJdEei7A-ctFtCKrQ" name="String"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_Z6TrQBJdEei7A-ctFtCKrQ" name="Object"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_Z5_iMBJdEei7A-ctFtCKrQ" name="util">
+          <packagedElement xmi:type="uml:Class" xmi:id="_Z6BXYBJdEei7A-ctFtCKrQ" name="List"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KGu9cBJgEei7A-ctFtCKrQ" name="controleur"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_QqqkgBJgEei7A-ctFtCKrQ" name="modele">
+      <packagedElement xmi:type="uml:Package" xmi:id="_dP4_oBJgEei7A-ctFtCKrQ" name="voiture">
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_oSQg4BJgEei7A-ctFtCKrQ" client="_dP4_oBJgEei7A-ctFtCKrQ" supplier="_Z5cIkBJdEei7A-ctFtCKrQ"/>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_tSJiUBJgEei7A-ctFtCKrQ" client="_dP4_oBJgEei7A-ctFtCKrQ" supplier="_bMMCgBJgEei7A-ctFtCKrQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_bMMCgBJgEei7A-ctFtCKrQ" name="dao">
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_nplXUBJgEei7A-ctFtCKrQ" client="_bMMCgBJgEei7A-ctFtCKrQ" supplier="_Z5cIkBJdEei7A-ctFtCKrQ"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Z5cIkBJdEei7A-ctFtCKrQ" name="Modele" visibility="public">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z5mgoBJdEei7A-ctFtCKrQ" name="listObs" visibility="private" type="_Z5iPMBJdEei7A-ctFtCKrQ" isUnique="false">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Z5nuwBJdEei7A-ctFtCKrQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Z5nuwRJdEei7A-ctFtCKrQ" value="*"/>
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Z5nuwhJdEei7A-ctFtCKrQ" name="defaultValue">
+            <language>JAVA</language>
+            <body>new ArrayList&lt;Observer>()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z5snQBJdEei7A-ctFtCKrQ" name="daoMoteur" visibility="private" type="_Z5o84RJdEei7A-ctFtCKrQ" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Z5snQRJdEei7A-ctFtCKrQ" name="defaultValue">
+            <language>JAVA</language>
+            <body>DAOFactory.getDAOMoteur()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z5tOUBJdEei7A-ctFtCKrQ" name="daoTypeMoteur" visibility="private" type="_Z5o84RJdEei7A-ctFtCKrQ" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Z5tOURJdEei7A-ctFtCKrQ" name="defaultValue">
+            <language>JAVA</language>
+            <body>DAOFactory.getDAOTypeMoteur()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z5t1YBJdEei7A-ctFtCKrQ" name="daoOption" visibility="private" type="_Z5o84RJdEei7A-ctFtCKrQ" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Z5uccBJdEei7A-ctFtCKrQ" name="defaultValue">
+            <language>JAVA</language>
+            <body>DAOFactory.getDAOOption()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z5vDgBJdEei7A-ctFtCKrQ" name="daoMarque" visibility="private" type="_Z5o84RJdEei7A-ctFtCKrQ" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Z5vDgRJdEei7A-ctFtCKrQ" name="defaultValue">
+            <language>JAVA</language>
+            <body>DAOFactory.getDAOMarque()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z5vqkBJdEei7A-ctFtCKrQ" name="daoVehicule" visibility="private" type="_Z5o84RJdEei7A-ctFtCKrQ" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Z5wRoBJdEei7A-ctFtCKrQ" name="defaultValue">
+            <language>JAVA</language>
+            <body>DAOFactory.getDAOVehicule()</body>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Z51xMBJdEei7A-ctFtCKrQ" name="messageErreur" visibility="private" type="_Z5xfwRJdEei7A-ctFtCKrQ" isUnique="false">
+          <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_Z53mYBJdEei7A-ctFtCKrQ" name="defaultValue">
+            <language>JAVA</language>
+            <body>&quot;&quot;</body>
+          </defaultValue>
+        </ownedAttribute>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_obcZcBJdEei7A-ctFtCKrQ" client="_Z5cIkBJdEei7A-ctFtCKrQ" supplier="_kZ7r0BJdEei7A-ctFtCKrQ" contract="_kZ7r0BJdEei7A-ctFtCKrQ"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Z6OLsBJdEei7A-ctFtCKrQ" name="getTable" specification="_Z5-UEBJdEei7A-ctFtCKrQ">
+          <language>JAVA</language>
+          <body>&#xD;
+    List list = null;&#xD;
+    try {&#xD;
+        switch(table) {&#xD;
+            case MOTEUR:&#xD;
+                list = daoMoteur.afficher();&#xD;
+                break;&#xD;
+            case TYPEMOTEUR:&#xD;
+                list = daoTypeMoteur.afficher();&#xD;
+                break;&#xD;
+            case OPTION:&#xD;
+                list = daoOption.afficher();&#xD;
+                break;&#xD;
+            case MARQUE:&#xD;
+                list = daoMarque.afficher();&#xD;
+                break;&#xD;
+            case VEHICULE:&#xD;
+                list = daoVehicule.afficher();&#xD;
+                break;&#xD;
+            default:&#xD;
+                break;&#xD;
+        }&#xD;
+    } catch (SQLException e) {&#xD;
+        this.setErreur(&quot;Erreur de lecture dans la base de données&quot;);&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    return list;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Z6dcQBJdEei7A-ctFtCKrQ" name="info" specification="_Z6SdIBJdEei7A-ctFtCKrQ">
+          <language>JAVA</language>
+          <body>&#xD;
+    Object o = null;&#xD;
+    try {&#xD;
+        switch(table) {&#xD;
+            case MOTEUR:&#xD;
+                o = daoMoteur.info(id);&#xD;
+                break;&#xD;
+            case TYPEMOTEUR:&#xD;
+                o = daoTypeMoteur.info(id);&#xD;
+                break;&#xD;
+            case OPTION:&#xD;
+                o = daoOption.info(id);&#xD;
+                break;&#xD;
+            case MARQUE:&#xD;
+                o = daoMarque.info(id);&#xD;
+                break;&#xD;
+            case VEHICULE:&#xD;
+                o = daoVehicule.info(id);&#xD;
+                break;&#xD;
+            default:&#xD;
+                break;&#xD;
+        }&#xD;
+    } catch (SQLException e) {&#xD;
+        this.setErreur(&quot;Erreur de lecture dans la base de données&quot;);&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    return o;&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Z6nNQBJdEei7A-ctFtCKrQ" name="ajouter" specification="_Z6gfkBJdEei7A-ctFtCKrQ">
+          <language>JAVA</language>
+          <body>&#xD;
+    try {&#xD;
+        switch(table) {&#xD;
+            case MOTEUR:&#xD;
+                daoMoteur.ajouter((Moteur) obj);&#xD;
+                break;&#xD;
+            case TYPEMOTEUR:&#xD;
+                daoTypeMoteur.ajouter((TypeMoteur) obj);&#xD;
+                break;&#xD;
+            case OPTION:&#xD;
+                daoOption.ajouter((Option) obj);&#xD;
+                break;&#xD;
+            case MARQUE:&#xD;
+                daoMarque.ajouter((Marque) obj);&#xD;
+                break;&#xD;
+            case VEHICULE:&#xD;
+                daoVehicule.ajouter((Vehicule) obj);&#xD;
+                break;&#xD;
+            default:&#xD;
+                break;&#xD;
+        }&#xD;
+    } catch (SQLException e) {&#xD;
+        this.setErreur(&quot;Erreur de la base de données lors de la création&quot;);&#xD;
+        e.printStackTrace();&#xD;
+    }&#xD;
+    updateObserver();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Z6vJEBJdEei7A-ctFtCKrQ" name="supprimer" specification="_Z6ppgBJdEei7A-ctFtCKrQ">
+          <language>JAVA</language>
+          <body>&#xD;
+    try {&#xD;
+        switch(table) {&#xD;
+            case MOTEUR:&#xD;
+                daoMoteur.supprimer(id);&#xD;
+                break;&#xD;
+            case TYPEMOTEUR:&#xD;
+                daoTypeMoteur.supprimer(id);&#xD;
+                break;&#xD;
+            case OPTION:&#xD;
+                daoOption.supprimer(id);&#xD;
+                break;&#xD;
+            case MARQUE:&#xD;
+                daoMarque.supprimer(id);&#xD;
+                break;&#xD;
+            case VEHICULE:&#xD;
+                daoVehicule.supprimer(id);&#xD;
+                break;&#xD;
+            default:&#xD;
+                break;&#xD;
+        }&#xD;
+    } catch (SQLException e) {&#xD;
+        if (e.getClass() == SQLIntegrityConstraintViolationException.class) {&#xD;
+            this.setErreur(&quot;Cette objet ne peut être supprimé car il est utilisé par un autre&quot;);&#xD;
+        } else {&#xD;
+            this.setErreur(&quot;Erreur de la base de données lors de la suppression&quot;);&#xD;
+            e.printStackTrace();&#xD;
+        }&#xD;
+    }&#xD;
+    updateObserver();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Z6yzcBJdEei7A-ctFtCKrQ" name="updateObserverWithErrorMessage" specification="_Z6w-QBJdEei7A-ctFtCKrQ">
+          <language>JAVA</language>
+          <body>&#xD;
+    for (Observer observer : listObs) {&#xD;
+        observer.updateWithErrorMessage(this.messageErreur);&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Z61PsBJdEei7A-ctFtCKrQ" name="updateObserver" specification="_Z60BkBJdEei7A-ctFtCKrQ">
+          <language>JAVA</language>
+          <body>&#xD;
+    for (Observer observer : listObs) {&#xD;
+        observer.update();&#xD;
+    }&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Z66vQBJdEei7A-ctFtCKrQ" name="addObserver" specification="_Z63r8BJdEei7A-ctFtCKrQ">
+          <language>JAVA</language>
+          <body>&#xD;
+    listObs.add(obs);&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Z69LgBJdEei7A-ctFtCKrQ" name="delObserver" specification="_Z679YBJdEei7A-ctFtCKrQ">
+          <language>JAVA</language>
+          <body>&#xD;
+    listObs = new ArrayList&lt;Observer>();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Z7Bc8BJdEei7A-ctFtCKrQ" name="setErreur" specification="_Z6_AsBJdEei7A-ctFtCKrQ">
+          <language>JAVA</language>
+          <body>&#xD;
+    this.messageErreur = message;&#xD;
+    updateObserverWithErrorMessage();&#xD;
+</body>
+        </ownedBehavior>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Z5-UEBJdEei7A-ctFtCKrQ" name="getTable" visibility="public" method="_Z6OLsBJdEei7A-ctFtCKrQ">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z6JTMBJdEei7A-ctFtCKrQ" type="_Z6BXYBJdEei7A-ctFtCKrQ" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z6LvcBJdEei7A-ctFtCKrQ" name="table" type="_Z540gBJdEei7A-ctFtCKrQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Z6SdIBJdEei7A-ctFtCKrQ" name="info" visibility="public" method="_Z6dcQBJdEei7A-ctFtCKrQ">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z6XVoBJdEei7A-ctFtCKrQ" type="_Z6TrQBJdEei7A-ctFtCKrQ" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z6aY8BJdEei7A-ctFtCKrQ" name="table" type="_Z540gBJdEei7A-ctFtCKrQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z6cOIBJdEei7A-ctFtCKrQ" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Z6gfkBJdEei7A-ctFtCKrQ" name="ajouter" visibility="public" method="_Z6nNQBJdEei7A-ctFtCKrQ">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z6ji4BJdEei7A-ctFtCKrQ" name="table" type="_Z540gBJdEei7A-ctFtCKrQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z6lYEBJdEei7A-ctFtCKrQ" name="obj" type="_Z6TrQBJdEei7A-ctFtCKrQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Z6ppgBJdEei7A-ctFtCKrQ" name="supprimer" visibility="public" method="_Z6vJEBJdEei7A-ctFtCKrQ">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z6q3oBJdEei7A-ctFtCKrQ" name="table" type="_Z540gBJdEei7A-ctFtCKrQ"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z6t68BJdEei7A-ctFtCKrQ" name="id">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Z6w-QBJdEei7A-ctFtCKrQ" name="updateObserverWithErrorMessage" visibility="public" method="_Z6yzcBJdEei7A-ctFtCKrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Z60BkBJdEei7A-ctFtCKrQ" name="updateObserver" visibility="public" method="_Z61PsBJdEei7A-ctFtCKrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Z63r8BJdEei7A-ctFtCKrQ" name="addObserver" visibility="public" method="_Z66vQBJdEei7A-ctFtCKrQ">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z65hIBJdEei7A-ctFtCKrQ" name="obs" type="_Z5iPMBJdEei7A-ctFtCKrQ"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Z679YBJdEei7A-ctFtCKrQ" name="delObserver" visibility="public" method="_Z69LgBJdEei7A-ctFtCKrQ"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Z6_AsBJdEei7A-ctFtCKrQ" name="setErreur" visibility="public" method="_Z7Bc8BJdEei7A-ctFtCKrQ">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z7AO0BJdEei7A-ctFtCKrQ" name="message" type="_Z5xfwRJdEei7A-ctFtCKrQ"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_4zWUoBJgEei7A-ctFtCKrQ" name="controleur"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_FxEIQBJhEei7A-ctFtCKrQ" name="vue">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_VFhJwBJhEei7A-ctFtCKrQ">
+        <body>Ennumération permettant de mémoriser la vue active et l'adresse d'accés au fichier FXML correspondant</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_bJihsBJhEei7A-ctFtCKrQ">
+        <body>Fenetre principale contenant le Menu</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_pTCL8BJhEei7A-ctFtCKrQ">
+        <body>Classe abstraite superclasse de toute les classe affichant les tables de la BDD</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_0IkyIBJhEei7A-ctFtCKrQ">
+        <body>Boite de dialogue listant les options d'un véhicules</body>
+      </ownedComment>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_z4vRIBF2EeivPvkNQTDlpg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_z4xGUBF2EeivPvkNQTDlpg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_z5CzIBF2EeivPvkNQTDlpg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_z5DaMBF2EeivPvkNQTDlpg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_z5L9EBF2EeivPvkNQTDlpg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_z5MkIBF2EeivPvkNQTDlpg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_Z5lSgBJdEei7A-ctFtCKrQ" name="com.garage.observer.Observer" base_Classifier="_Z5iPMBJdEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_Z5sAMBJdEei7A-ctFtCKrQ" name="com.garage.modele.dao.DAO" base_Classifier="_Z5o84RJdEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_Z5z8ABJdEei7A-ctFtCKrQ" name="java.lang.String" base_Classifier="_Z5xfwRJdEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_Z58e4BJdEei7A-ctFtCKrQ" name="com.garage.modele.dao.DatabaseTable" base_Classifier="_Z540gBJdEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_Z6GP4BJdEei7A-ctFtCKrQ" name="java.util.List" base_Classifier="_Z6BXYBJdEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_Z6VgcBJdEei7A-ctFtCKrQ" name="java.lang.Object" base_Classifier="_Z6TrQBJdEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_iFZdYBJdEei7A-ctFtCKrQ" name="com.garage.modele.Modele" base_Classifier="_Z5cIkBJdEei7A-ctFtCKrQ"/>
+  <standard:Create xmi:id="_iFe88BJdEei7A-ctFtCKrQ" base_BehavioralFeature="_iFb5oBJdEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_kZ-vIBJdEei7A-ctFtCKrQ" name="com.garage.observer.Observer" base_Classifier="_k_WtEBJdEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_Ob1AUBJeEei7A-ctFtCKrQ" name="com.garage.Garage2" base_Classifier="_ObykEBJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_TVk9gBJeEei7A-ctFtCKrQ" name="javafx.application.Application" base_Classifier="_TVihQRJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_TVrEIBJeEei7A-ctFtCKrQ" name="javafx.stage.Stage" base_Classifier="_TVpO8BJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_TVyY4BJeEei7A-ctFtCKrQ" name="javafx.scene.layout.BorderPane" base_Classifier="_TVwjsBJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_TV6UsBJeEei7A-ctFtCKrQ" name="com.garage.controleur.Controleur" base_Classifier="_iFMpEBJdEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_TWPE0BJeEei7A-ctFtCKrQ" name="com.garage.vue.VueActive" base_Classifier="_TWAbUBJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_TWs-4BJeEei7A-ctFtCKrQ" name="javafx.stage.Window" base_Classifier="_TWrJsBJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_ml_eQBJeEei7A-ctFtCKrQ" name="com.garage.Garage2" base_Classifier="_TVgsEBJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_mmGzABJeEei7A-ctFtCKrQ" name="javafx.scene.control.TableView" base_Classifier="_mmDIoRJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_mmSZMBJeEei7A-ctFtCKrQ" name="javafx.scene.control.TableCell" base_Classifier="_mmOu0BJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_mmWDkBJeEei7A-ctFtCKrQ" name="javafx.scene.control.Button" base_Classifier="_mmUOYBJeEei7A-ctFtCKrQ"/>
+  <standard:Create xmi:id="_mmd_YBJeEei7A-ctFtCKrQ" base_BehavioralFeature="_mmbjIBJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_s8P1sBJeEei7A-ctFtCKrQ" name="javafx.scene.control.TableColumn" base_Classifier="_s8NZcBJeEei7A-ctFtCKrQ"/>
+  <standard:Create xmi:id="_s8npIBJeEei7A-ctFtCKrQ" base_BehavioralFeature="_s8lz8BJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_-kHEQBJeEei7A-ctFtCKrQ" name="javafx.scene.control.Label" base_Classifier="_-kEoABJeEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_-kVGsBJeEei7A-ctFtCKrQ" name="com.garage.modele.voiture.Vehicule" base_Classifier="_-kSDYBJeEei7A-ctFtCKrQ"/>
+  <standard:Create xmi:id="_628ZgBJfEei7A-ctFtCKrQ" base_BehavioralFeature="_625WMBJfEei7A-ctFtCKrQ"/>
+</xmi:XMI>

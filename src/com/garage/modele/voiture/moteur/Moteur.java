@@ -1,4 +1,4 @@
-package voiture.moteur;
+package com.garage.modele.voiture.moteur;
 
 public class Moteur {
 

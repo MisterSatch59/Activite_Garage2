@@ -9,6 +9,8 @@ import java.sql.Statement;
 import javax.swing.JCheckBox;
 import javax.swing.JTable;
 
+import com.garage.modele.dao.DatabaseTable;
+
 import fr.ocr.ihm.ButtonEditor;
 import fr.ocr.ihm.ButtonRenderer;
 import fr.ocr.ihm.listener.ViewDetailVehiculeListener;

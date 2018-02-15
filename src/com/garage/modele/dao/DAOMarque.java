@@ -1,9 +1,10 @@
-package dao;
+package com.garage.modele.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import voiture.Marque;
+
+import com.garage.modele.voiture.Marque;
 
 /**
  * DAO associé au JavaBean Marque

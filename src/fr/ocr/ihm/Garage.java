@@ -17,11 +17,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.KeyStroke;
 
+import com.garage.modele.dao.DatabaseTable;
+import com.garage.modele.dao.HsqldbConnection;
+
 import fr.ocr.ihm.listener.NewVehiculeListener;
 import fr.ocr.ihm.listener.ViewMenuListener;
 import fr.ocr.sql.DAOTableFactory;
-import fr.ocr.sql.DatabaseTable;
-import fr.ocr.sql.HsqldbConnection;
 
 public class Garage extends JFrame {
 

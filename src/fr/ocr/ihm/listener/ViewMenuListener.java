@@ -7,13 +7,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
+import com.garage.modele.dao.DatabaseTable;
+import com.garage.modele.dao.HsqldbConnection;
+
 import fr.ocr.sql.DAOTableFactory;
-import fr.ocr.sql.DatabaseTable;
-import fr.ocr.sql.HsqldbConnection;
 
 /**
- * Classe permettant de gérer l'affichage des différentes tables de la BDD en
- * fonction du menu cliqué
+ * Classe permettant de gï¿½rer l'affichage des diffï¿½rentes tables de la BDD en
+ * fonction du menu cliquï¿½
  * 
  * @author cysboy
  */

@@ -1,4 +1,4 @@
-package dao;
+package com.garage.modele.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,12 +7,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.ocr.sql.DatabaseTable;
-import voiture.Marque;
-import voiture.Vehicule;
-import voiture.moteur.Moteur;
-import voiture.moteur.TypeMoteur;
-import voiture.option.Option;
+import com.garage.modele.voiture.Marque;
+import com.garage.modele.voiture.Vehicule;
+import com.garage.modele.voiture.moteur.Moteur;
+import com.garage.modele.voiture.moteur.TypeMoteur;
+import com.garage.modele.voiture.option.Option;
 
 /**
  * Superclasse DAO
@@ -59,17 +58,14 @@ public abstract class DAO<T> {
 	 * 
 	 * @param obj
 	 *            objet à ajouter
+	 * @throws SQLException
 	 */
-	public void ajouter(T obj) {
+	public void ajouter(T obj) throws SQLException {
 		Statement state;
-		try {
-			state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-			state.executeUpdate(
-					"INSERT INTO " + table + " (" + this.getColonnes() + ")  VALUES ( " + this.getValeur(obj) + " )");
-			state.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		state.executeUpdate(
+				"INSERT INTO " + table + " (" + this.getColonnes() + ")  VALUES ( " + this.getValeur(obj) + " )");
+		state.close();
 	}
 
 	/**
@@ -91,30 +87,28 @@ public abstract class DAO<T> {
 		state.executeUpdate("DELETE FROM " + table + " WHERE id = " + id);
 
 		state.close();
+
 	}
 
 	/**
-	 * Obtenir la liste des Objet de type T de la base de données
+	 * Obtenir la liste des Objets de type T de la base de données
 	 * 
 	 * @param listObj
+	 * @throws SQLException
 	 */
-	public final List<T> afficher() {
+	public final List<T> afficher() throws SQLException {
 		List<T> list = new ArrayList<T>();
-		try {
-			Statement state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-			ResultSet result = state.executeQuery("SELECT * FROM " + table);
 
-			while (result.next()) {
-				T obj = getT(result);
-				list.add(obj);
-			}
+		Statement state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet result = state.executeQuery("SELECT * FROM " + table);
 
-			result.close();
-			state.close();
-
-		} catch (SQLException e) {
-			e.printStackTrace();
+		while (result.next()) {
+			T obj = getT(result);
+			list.add(obj);
 		}
+
+		result.close();
+		state.close();
 
 		return list;
 	}
@@ -124,22 +118,20 @@ public abstract class DAO<T> {
 	 * 
 	 * @param id
 	 *            identifiant de l'objet
+	 * @throws SQLException 
 	 */
-	public final T info(int id) {
+	public final T info(int id) throws SQLException {
 		T obj = initT();
-		try {
-			Statement state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-			ResultSet result = state.executeQuery("SELECT * FROM " + table + " WHERE id = " + id);
 
-			if (result.first())
-				obj = getT(result);
+		Statement state = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+		ResultSet result = state.executeQuery("SELECT * FROM " + table + " WHERE id = " + id);
 
-			result.close();
-			state.close();
+		if (result.first())
+			obj = getT(result);
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		result.close();
+		state.close();
+
 		return obj;
 	}
 
@@ -160,7 +152,20 @@ public abstract class DAO<T> {
 	 */
 	protected abstract T getT(ResultSet result) throws SQLException;
 
+	/**
+	 * Retourne un String avec les éléments d'obj à insérer dans la BDD dans l'ordre
+	 * des colonnes avec une virgule entre chaque
+	 * 
+	 * @param obj
+	 * @return String avec les éléments d'obj à insérer dans la BDD
+	 */
 	protected abstract String getValeur(T obj);
 
+	/**
+	 * Retourne un String contenant le titre des colonnes avec une virgule entre
+	 * chaque
+	 * 
+	 * @return String contenant le titre des colonnes
+	 */
 	protected abstract String getColonnes();
 };

@@ -1,4 +1,4 @@
-package fr.ocr.sql;
+package com.garage.modele.dao;
 
 /**
  * Classe qui liste les tables manipulables

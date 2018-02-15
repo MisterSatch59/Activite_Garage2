@@ -1,4 +1,4 @@
-package voiture.option;
+package com.garage.modele.voiture.option;
 
 import java.io.Serializable;
 

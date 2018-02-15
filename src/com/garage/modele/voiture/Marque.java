@@ -1,4 +1,4 @@
-package voiture;
+package com.garage.modele.voiture;
 
 public class Marque {
 

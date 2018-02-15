@@ -1,10 +1,10 @@
-package voiture;
+package com.garage.modele.voiture;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import voiture.moteur.Moteur;
-import voiture.option.Option;
+import com.garage.modele.voiture.moteur.Moteur;
+import com.garage.modele.voiture.option.Option;
 
 public class Vehicule {
 	private int id = 0;
