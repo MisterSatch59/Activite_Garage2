@@ -10,7 +10,7 @@
         <columns>
           <TableColumn fx:id="marque" editable="false" prefWidth="594.0" text="MARQUE" />
           <TableColumn fx:id="moteur" editable="false" minWidth="0.0" prefWidth="1.0" text="MOTEUR" />
-            <TableColumn fx:id="prix" editable="false" minWidth="0.0" prefWidth="1.0" text="PRIX" />
+            <TableColumn fx:id="prix" editable="false" minWidth="0.0" prefWidth="1.0" text="PRIX TOTAL (€)" />
             <TableColumn fx:id="nom" editable="false" minWidth="0.0" prefWidth="1.0" text="NOM" />
             <TableColumn fx:id="id" editable="false" minWidth="0.0" prefWidth="1.0" text="ID" />
             <TableColumn fx:id="action1" editable="false" minWidth="0.0" prefWidth="1.0" />

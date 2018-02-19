@@ -27,12 +27,19 @@ public class AjouterOptionDialogue {
 
 	public void valider() {
 		try {
-			controleur.ajouter(new Option(0, nom.getText(), Double.valueOf(prix.getText())));
-			stageDialogue.close();
+			if(!nom.getText().equalsIgnoreCase("")) {
+				controleur.ajouter(new Option(0, nom.getText(), Double.valueOf(prix.getText())));
+				stageDialogue.close();
+			}else {
+				Alert probleme = new Alert(AlertType.ERROR);
+				probleme.setTitle("Erreur");
+				probleme.setHeaderText("Veuillez entrer le nom de l'option");
+				probleme.showAndWait();
+			}
 		}catch (NumberFormatException e) {
 			Alert probleme = new Alert(AlertType.ERROR);
 			probleme.setTitle("Erreur");
-			probleme.setHeaderText("Les valeurs entrées sont incorrecte, merci de corriger vos données avant de valider");
+			probleme.setHeaderText("Le prix de l'option est incorrect : merci d'entrer un prix en euros");
 			probleme.showAndWait();
 		}
 	}

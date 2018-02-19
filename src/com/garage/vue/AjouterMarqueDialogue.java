@@ -4,7 +4,9 @@ import com.garage.controleur.Controleur;
 import com.garage.modele.voiture.Marque;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class AjouterMarqueDialogue {
@@ -21,8 +23,15 @@ public class AjouterMarqueDialogue {
 	}
 
 	public void valider() {
-		controleur.ajouter(new Marque(0, nom.getText()));
-		stageDialogue.close();
+		if (!nom.getText().equalsIgnoreCase("")) {
+			controleur.ajouter(new Marque(0, nom.getText()));
+			stageDialogue.close();
+		} else {
+			Alert probleme = new Alert(AlertType.ERROR);
+			probleme.setTitle("Erreur");
+			probleme.setHeaderText("Veuillez entrer le nom de la marque");
+			probleme.showAndWait();
+		}
 	}
 
 	public void setStage(Stage stageDialogue) {
@@ -31,7 +40,7 @@ public class AjouterMarqueDialogue {
 
 	public void setControleur(Controleur controleur) {
 		this.controleur=controleur;
-		
+
 	}
 
 }

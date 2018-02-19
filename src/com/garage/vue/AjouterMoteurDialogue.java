@@ -20,12 +20,12 @@ import javafx.stage.Stage;
 public class AjouterMoteurDialogue {
 
 	@FXML
-	private TextField nom;
+	private TextField cylindre;
 	@FXML
 	private ChoiceBox<TypeMoteur> type;
 	@FXML
 	private TextField prix;
-	
+
 	private Garage2 garage;
 
 	private Stage stageDialogue;
@@ -38,12 +38,26 @@ public class AjouterMoteurDialogue {
 
 	public void valider() {
 		try {
-			controleur.ajouter(new Moteur(0, type.getValue(),nom.getText(),Double.valueOf(prix.getText())));
-			stageDialogue.close();
-		}catch (NumberFormatException | NullPointerException e) {
+			if (!cylindre.getText().equalsIgnoreCase("")) {
+				if(type.getValue()!=null) {
+					controleur.ajouter(new Moteur(0, type.getValue(), cylindre.getText(), Double.valueOf(prix.getText())));
+					stageDialogue.close();
+				}else {
+					Alert probleme = new Alert(AlertType.ERROR);
+					probleme.setTitle("Erreur");
+					probleme.setHeaderText("Veuillez choisir le type de moteur");
+					probleme.showAndWait();
+				}
+			}else {
+				Alert probleme = new Alert(AlertType.ERROR);
+				probleme.setTitle("Erreur");
+				probleme.setHeaderText("Veuillez entrer la cylindré du moteur");
+				probleme.showAndWait();
+			}
+		} catch (NumberFormatException e) {
 			Alert probleme = new Alert(AlertType.ERROR);
 			probleme.setTitle("Erreur");
-			probleme.setHeaderText("Les valeurs entrées sont incorrecte, merci de corriger vos données avant de valider");
+			probleme.setHeaderText("Le prix du moteur est incorrect : merci d'entrer un prix en euros");
 			probleme.showAndWait();
 		}
 	}
@@ -53,8 +67,8 @@ public class AjouterMoteurDialogue {
 	}
 
 	public void setControleur(Controleur controleur) {
-		this.controleur=controleur;
-		
+		this.controleur = controleur;
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -62,7 +76,7 @@ public class AjouterMoteurDialogue {
 		this.garage = garage;
 		ObservableList<TypeMoteur> list = FXCollections.observableArrayList();
 		list.addAll((List<TypeMoteur>) (this.garage.getModele().getTable(DatabaseTable.TYPEMOTEUR)));
-		
+
 		type.setItems(list);
 	}
 

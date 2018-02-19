@@ -453,6 +453,336 @@
                 </specification>
               </ownedLiteral>
             </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_XSgTYBVOEeiUM-q-1n6dIw" name="AjouterMarqueDialogue" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_XWjs8BVOEeiUM-q-1n6dIw" name="nom" visibility="private" type="_XSwLABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_XWnXUBVOEeiUM-q-1n6dIw" name="stageDialogue" visibility="private" type="_TVpO8BJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_XWrowBVOEeiUM-q-1n6dIw" name="controleur" visibility="private" type="_iFMpEBJdEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XW0LoBVOEeiUM-q-1n6dIw" name="annuler" specification="_XWusEBVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    stageDialogue.close();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XW5EIBVOEeiUM-q-1n6dIw" name="valider" specification="_XW3O8BVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    if (!nom.getText().equalsIgnoreCase(&quot;&quot;)) {&#xD;
+        controleur.ajouter(new Marque(0, nom.getText()));&#xD;
+        stageDialogue.close();&#xD;
+    } else {&#xD;
+        Alert probleme = new Alert(AlertType.ERROR);&#xD;
+        probleme.setTitle(&quot;Erreur&quot;);&#xD;
+        probleme.setHeaderText(&quot;Veuillez entrer le nom de la marque&quot;);&#xD;
+        probleme.showAndWait();&#xD;
+    }&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XXAY4BVOEeiUM-q-1n6dIw" name="setStage" specification="_XW8HcBVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.stageDialogue = stageDialogue;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_XXHGkBVOEeiUM-q-1n6dIw" name="setControleur" specification="_XXDcMBVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.controleur = controleur;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_XWusEBVOEeiUM-q-1n6dIw" name="annuler" visibility="public" method="_XW0LoBVOEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_XW3O8BVOEeiUM-q-1n6dIw" name="valider" visibility="public" method="_XW5EIBVOEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_XW8HcBVOEeiUM-q-1n6dIw" name="setStage" visibility="public" method="_XXAY4BVOEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_XW-jsBVOEeiUM-q-1n6dIw" name="stageDialogue" type="_TVpO8BJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_XXDcMBVOEeiUM-q-1n6dIw" name="setControleur" visibility="public" method="_XXHGkBVOEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_XXFRYBVOEeiUM-q-1n6dIw" name="controleur" type="_iFMpEBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_wnJncBVOEeiUM-q-1n6dIw" name="AjouterMoteurDialogue" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_wnMqwBVOEeiUM-q-1n6dIw" name="cylindre" visibility="private" type="_XSwLABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_wnXp4BVOEeiUM-q-1n6dIw" name="type" visibility="private" type="_wnPHABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_wnb7UBVOEeiUM-q-1n6dIw" name="prix" visibility="private" type="_XSwLABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_wneXkBVOEeiUM-q-1n6dIw" name="garage" visibility="private" type="_TVgsEBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_wnha4BVOEeiUM-q-1n6dIw" name="stageDialogue" visibility="private" type="_TVpO8BJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_wnjQEBVOEeiUM-q-1n6dIw" name="controleur" visibility="private" type="_iFMpEBJdEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wnnhgBVOEeiUM-q-1n6dIw" name="annuler" specification="_wnmTYBVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    stageDialogue.close();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wnp9wBVOEeiUM-q-1n6dIw" name="valider" specification="_wnovoBVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    try {&#xD;
+        if (!cylindre.getText().equalsIgnoreCase(&quot;&quot;)) {&#xD;
+            if (type.getValue() != null) {&#xD;
+                controleur.ajouter(new Moteur(0, type.getValue(), cylindre.getText(), Double.valueOf(prix.getText())));&#xD;
+                stageDialogue.close();&#xD;
+            } else {&#xD;
+                Alert probleme = new Alert(AlertType.ERROR);&#xD;
+                probleme.setTitle(&quot;Erreur&quot;);&#xD;
+                probleme.setHeaderText(&quot;Veuillez choisir le type de moteur&quot;);&#xD;
+                probleme.showAndWait();&#xD;
+            }&#xD;
+        } else {&#xD;
+            Alert probleme = new Alert(AlertType.ERROR);&#xD;
+            probleme.setTitle(&quot;Erreur&quot;);&#xD;
+            probleme.setHeaderText(&quot;Veuillez entrer la cylindré du moteur&quot;);&#xD;
+            probleme.showAndWait();&#xD;
+        }&#xD;
+    } catch (NumberFormatException e) {&#xD;
+        Alert probleme = new Alert(AlertType.ERROR);&#xD;
+        probleme.setTitle(&quot;Erreur&quot;);&#xD;
+        probleme.setHeaderText(&quot;Le prix du moteur est incorrect : merci d'entrer un prix en euros&quot;);&#xD;
+        probleme.showAndWait();&#xD;
+    }&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wnvdUBVOEeiUM-q-1n6dIw" name="setStage" specification="_wnry8BVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.stageDialogue = stageDialogue;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wn0V0BVOEeiUM-q-1n6dIw" name="setControleur" specification="_wnx5kBVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.controleur = controleur;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_wn7DgBVOEeiUM-q-1n6dIw" name="setMain" specification="_wn3ZIBVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.garage = garage;&#xD;
+    ObservableList&lt;TypeMoteur> list = FXCollections.observableArrayList();&#xD;
+    list.addAll((List&lt;TypeMoteur>) (this.garage.getModele().getTable(DatabaseTable.TYPEMOTEUR)));&#xD;
+    type.setItems(list);&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_wnmTYBVOEeiUM-q-1n6dIw" name="annuler" visibility="public" method="_wnnhgBVOEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_wnovoBVOEeiUM-q-1n6dIw" name="valider" visibility="public" method="_wnp9wBVOEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_wnry8BVOEeiUM-q-1n6dIw" name="setStage" visibility="public" method="_wnvdUBVOEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_wnuPMBVOEeiUM-q-1n6dIw" name="stageDialogue" type="_TVpO8BJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_wnx5kBVOEeiUM-q-1n6dIw" name="setControleur" visibility="public" method="_wn0V0BVOEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_wnzHsBVOEeiUM-q-1n6dIw" name="controleur" type="_iFMpEBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_wn3ZIBVOEeiUM-q-1n6dIw" name="setMain" visibility="public" method="_wn7DgBVOEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_wn51YBVOEeiUM-q-1n6dIw" name="garage" type="_TVgsEBJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_88_iwBVOEeiUM-q-1n6dIw" name="AjouterOptionDialogue" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_89CmEBVOEeiUM-q-1n6dIw" name="nom" visibility="private" type="_XSwLABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_89DNIBVOEeiUM-q-1n6dIw" name="prix" visibility="private" type="_XSwLABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_89D0MBVOEeiUM-q-1n6dIw" name="stageDialogue" visibility="private" type="_TVpO8BJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_89D0MRVOEeiUM-q-1n6dIw" name="controleur" visibility="private" type="_iFMpEBJdEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_89EbQBVOEeiUM-q-1n6dIw" name="annuler" specification="_89D0MhVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    stageDialogue.close();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_89EbQhVOEeiUM-q-1n6dIw" name="valider" specification="_89EbQRVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    try {&#xD;
+        if (!nom.getText().equalsIgnoreCase(&quot;&quot;)) {&#xD;
+            controleur.ajouter(new Option(0, nom.getText(), Double.valueOf(prix.getText())));&#xD;
+            stageDialogue.close();&#xD;
+        } else {&#xD;
+            Alert probleme = new Alert(AlertType.ERROR);&#xD;
+            probleme.setTitle(&quot;Erreur&quot;);&#xD;
+            probleme.setHeaderText(&quot;Veuillez entrer le nom de l'option&quot;);&#xD;
+            probleme.showAndWait();&#xD;
+        }&#xD;
+    } catch (NumberFormatException e) {&#xD;
+        Alert probleme = new Alert(AlertType.ERROR);&#xD;
+        probleme.setTitle(&quot;Erreur&quot;);&#xD;
+        probleme.setHeaderText(&quot;Le prix de l'option est incorrect : merci d'entrer un prix en euros&quot;);&#xD;
+        probleme.showAndWait();&#xD;
+    }&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_89GQcBVOEeiUM-q-1n6dIw" name="setStage" specification="_89FpYBVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.stageDialogue = stageDialogue;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_89G3gRVOEeiUM-q-1n6dIw" name="setControleur" specification="_89GQcRVOEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.controleur = controleur;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_89D0MhVOEeiUM-q-1n6dIw" name="annuler" visibility="public" method="_89EbQBVOEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_89EbQRVOEeiUM-q-1n6dIw" name="valider" visibility="public" method="_89EbQhVOEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_89FpYBVOEeiUM-q-1n6dIw" name="setStage" visibility="public" method="_89GQcBVOEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_89FpYRVOEeiUM-q-1n6dIw" name="stageDialogue" type="_TVpO8BJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_89GQcRVOEeiUM-q-1n6dIw" name="setControleur" visibility="public" method="_89G3gRVOEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_89G3gBVOEeiUM-q-1n6dIw" name="controleur" type="_iFMpEBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_JdvGgBVPEeiUM-q-1n6dIw" name="AjouterTypeMoteurDialogue" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_JdxiwBVPEeiUM-q-1n6dIw" name="nom" visibility="private" type="_XSwLABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_JdyJ0BVPEeiUM-q-1n6dIw" name="stageDialogue" visibility="private" type="_TVpO8BJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_Jdyw4BVPEeiUM-q-1n6dIw" name="controleur" visibility="private" type="_iFMpEBJdEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_JdzX8BVPEeiUM-q-1n6dIw" name="annuler" specification="_Jdyw4RVPEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    stageDialogue.close();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_JdzX8hVPEeiUM-q-1n6dIw" name="valider" specification="_JdzX8RVPEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    if (!nom.getText().equalsIgnoreCase(&quot;&quot;)) {&#xD;
+        controleur.ajouter(new TypeMoteur(0, nom.getText()));&#xD;
+        stageDialogue.close();&#xD;
+    } else {&#xD;
+        Alert probleme = new Alert(AlertType.ERROR);&#xD;
+        probleme.setTitle(&quot;Erreur&quot;);&#xD;
+        probleme.setHeaderText(&quot;Veuillez entrer le nom du type de moteur&quot;);&#xD;
+        probleme.showAndWait();&#xD;
+    }&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Jd0mERVPEeiUM-q-1n6dIw" name="setStage" specification="_Jdz_ABVPEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.stageDialogue = stageDialogue;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Jd5ekBVPEeiUM-q-1n6dIw" name="setControleur" specification="_Jd2bQBVPEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.controleur = controleur;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Jdyw4RVPEeiUM-q-1n6dIw" name="annuler" visibility="public" method="_JdzX8BVPEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_JdzX8RVPEeiUM-q-1n6dIw" name="valider" visibility="public" method="_JdzX8hVPEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Jdz_ABVPEeiUM-q-1n6dIw" name="setStage" visibility="public" method="_Jd0mERVPEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Jd0mEBVPEeiUM-q-1n6dIw" name="stageDialogue" type="_TVpO8BJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_Jd2bQBVPEeiUM-q-1n6dIw" name="setControleur" visibility="public" method="_Jd5ekBVPEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_Jd3CUBVPEeiUM-q-1n6dIw" name="controleur" type="_iFMpEBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+            </packagedElement>
+            <packagedElement xmi:type="uml:Class" xmi:id="_RQ79EBVPEeiUM-q-1n6dIw" name="AjouterVehiculeDialogue" visibility="public">
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RQ_AYBVPEeiUM-q-1n6dIw" name="marque" visibility="private" type="_wnPHABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RQ_ncBVPEeiUM-q-1n6dIw" name="moteur" visibility="private" type="_wnPHABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RRAOgBVPEeiUM-q-1n6dIw" name="nom" visibility="private" type="_XSwLABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RRA1kBVPEeiUM-q-1n6dIw" name="prix" visibility="private" type="_XSwLABVOEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RRO4ABVPEeiUM-q-1n6dIw" name="option" visibility="private" type="_RRA1kRVPEeiUM-q-1n6dIw" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RRUXkBVPEeiUM-q-1n6dIw" name="cbOptions" visibility="private" type="_RRQGIBVPEeiUM-q-1n6dIw" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RRUXkRVPEeiUM-q-1n6dIw"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RRUXkhVPEeiUM-q-1n6dIw" value="*"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RRYpABVPEeiUM-q-1n6dIw" name="optionVehicule" visibility="private" type="_RRU-oRVPEeiUM-q-1n6dIw" isUnique="false">
+                <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RRZQEBVPEeiUM-q-1n6dIw"/>
+                <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RRZQERVPEeiUM-q-1n6dIw" value="*"/>
+              </ownedAttribute>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RRZQEhVPEeiUM-q-1n6dIw" name="garage" visibility="private" type="_TVgsEBJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RRZ3IBVPEeiUM-q-1n6dIw" name="stageDialogue" visibility="private" type="_TVpO8BJeEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedAttribute xmi:type="uml:Property" xmi:id="_RRZ3IRVPEeiUM-q-1n6dIw" name="controleur" visibility="private" type="_iFMpEBJdEei7A-ctFtCKrQ" isUnique="false"/>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RRaeMRVPEeiUM-q-1n6dIw" name="annuler" specification="_RRaeMBVPEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    stageDialogue.close();&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RRc6cBVPEeiUM-q-1n6dIw" name="valider" specification="_RRaeMhVPEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    try {&#xD;
+        Vehicule v;&#xD;
+        if (!nom.getText().equalsIgnoreCase(&quot;&quot;)) {&#xD;
+            if (marque.getValue() != null) {&#xD;
+                if (moteur.getValue() != null) {&#xD;
+                    v = new Vehicule(0, nom.getText(), marque.getValue(), moteur.getValue(), Double.valueOf(prix.getText()));&#xD;
+                    for (int i = 0; i &lt; cbOptions.length; i++) {&#xD;
+                        if (cbOptions[i].isSelected()) {&#xD;
+                            v.addOption(optionVehicule[i]);&#xD;
+                        }&#xD;
+                    }&#xD;
+                    controleur.ajouter(v);&#xD;
+                    stageDialogue.close();&#xD;
+                } else {&#xD;
+                    Alert probleme = new Alert(AlertType.ERROR);&#xD;
+                    probleme.setTitle(&quot;Erreur&quot;);&#xD;
+                    probleme.setHeaderText(&quot;Veuillez choisir la moteur du véhicule&quot;);&#xD;
+                    probleme.showAndWait();&#xD;
+                }&#xD;
+            } else {&#xD;
+                Alert probleme = new Alert(AlertType.ERROR);&#xD;
+                probleme.setTitle(&quot;Erreur&quot;);&#xD;
+                probleme.setHeaderText(&quot;Veuillez choisir la marque du véhicule&quot;);&#xD;
+                probleme.showAndWait();&#xD;
+            }&#xD;
+        } else {&#xD;
+            Alert probleme = new Alert(AlertType.ERROR);&#xD;
+            probleme.setTitle(&quot;Erreur&quot;);&#xD;
+            probleme.setHeaderText(&quot;Veuillez entrer le nom du véhicule&quot;);&#xD;
+            probleme.showAndWait();&#xD;
+        }&#xD;
+    } catch (NumberFormatException e) {&#xD;
+        Alert probleme = new Alert(AlertType.ERROR);&#xD;
+        probleme.setTitle(&quot;Erreur&quot;);&#xD;
+        probleme.setHeaderText(&quot;Le prix du véhicule est incorrect : merci d'entrer un prix en euros&quot;);&#xD;
+        probleme.showAndWait();&#xD;
+    }&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RRevoBVPEeiUM-q-1n6dIw" name="setStage" specification="_RRdhgBVPEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.stageDialogue = stageDialogue;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RRfWshVPEeiUM-q-1n6dIw" name="setControleur" specification="_RRfWsBVPEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.controleur = controleur;&#xD;
+</body>
+              </ownedBehavior>
+              <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RRgk0BVPEeiUM-q-1n6dIw" name="setMain" specification="_RRf9wBVPEeiUM-q-1n6dIw">
+                <language>JAVA</language>
+                <body>&#xD;
+    this.garage = garage;&#xD;
+    ObservableList&lt;Moteur> listMoteur = FXCollections.observableArrayList();&#xD;
+    listMoteur.addAll((List&lt;Moteur>) (this.garage.getModele().getTable(DatabaseTable.MOTEUR)));&#xD;
+    moteur.setItems(listMoteur);&#xD;
+    ObservableList&lt;Marque> listMarque = FXCollections.observableArrayList();&#xD;
+    listMarque.addAll((List&lt;Marque>) (this.garage.getModele().getTable(DatabaseTable.MARQUE)));&#xD;
+    marque.setItems(listMarque);&#xD;
+    List&lt;Option> listOption = this.garage.getModele().getTable(DatabaseTable.OPTION);&#xD;
+    cbOptions = new CheckBox[listOption.size()];&#xD;
+    optionVehicule = new Option[listOption.size()];&#xD;
+    int i = 0;&#xD;
+    for (Option option : listOption) {&#xD;
+        cbOptions[i] = new CheckBox(option.getNom());&#xD;
+        optionVehicule[i] = option;&#xD;
+        Tooltip tooltip = new Tooltip(option.getPrix() + &quot;€&quot;);&#xD;
+        cbOptions[i].setTooltip(tooltip);&#xD;
+        this.option.getChildren().add(cbOptions[i]);&#xD;
+        i++;&#xD;
+    }&#xD;
+</body>
+              </ownedBehavior>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_RRaeMBVPEeiUM-q-1n6dIw" name="annuler" visibility="public" method="_RRaeMRVPEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_RRaeMhVPEeiUM-q-1n6dIw" name="valider" visibility="public" method="_RRc6cBVPEeiUM-q-1n6dIw"/>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_RRdhgBVPEeiUM-q-1n6dIw" name="setStage" visibility="public" method="_RRevoBVPEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_RReIkBVPEeiUM-q-1n6dIw" name="stageDialogue" type="_TVpO8BJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_RRfWsBVPEeiUM-q-1n6dIw" name="setControleur" visibility="public" method="_RRfWshVPEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_RRfWsRVPEeiUM-q-1n6dIw" name="controleur" type="_iFMpEBJdEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+              <ownedOperation xmi:type="uml:Operation" xmi:id="_RRf9wBVPEeiUM-q-1n6dIw" name="setMain" visibility="public" method="_RRgk0BVPEeiUM-q-1n6dIw">
+                <ownedParameter xmi:type="uml:Parameter" xmi:id="_RRf9wRVPEeiUM-q-1n6dIw" name="garage" type="_TVgsEBJeEei7A-ctFtCKrQ"/>
+              </ownedOperation>
+            </packagedElement>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_TVgsEBJeEei7A-ctFtCKrQ" name="Garage2" visibility="public">
             <generalization xmi:type="uml:Generalization" xmi:id="_TVmLoBJeEei7A-ctFtCKrQ" general="_TVihQRJeEei7A-ctFtCKrQ"/>
@@ -620,6 +950,9 @@
             </packagedElement>
             <packagedElement xmi:type="uml:Package" xmi:id="_-kRcUBJeEei7A-ctFtCKrQ" name="voiture">
               <packagedElement xmi:type="uml:Class" xmi:id="_-kSDYBJeEei7A-ctFtCKrQ" name="Vehicule"/>
+              <packagedElement xmi:type="uml:Package" xmi:id="_RRU-oBVPEeiUM-q-1n6dIw" name="option">
+                <packagedElement xmi:type="uml:Class" xmi:id="_RRU-oRVPEeiUM-q-1n6dIw" name="Option"/>
+              </packagedElement>
             </packagedElement>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_ObykEBJeEei7A-ctFtCKrQ" name="Garage2"/>
@@ -639,6 +972,7 @@
         <packagedElement xmi:type="uml:Package" xmi:id="_TVvVkBJeEei7A-ctFtCKrQ" name="scene">
           <packagedElement xmi:type="uml:Package" xmi:id="_TVv8oBJeEei7A-ctFtCKrQ" name="layout">
             <packagedElement xmi:type="uml:Class" xmi:id="_TVwjsBJeEei7A-ctFtCKrQ" name="BorderPane"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_RRA1kRVPEeiUM-q-1n6dIw" name="FlowPane"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Package" xmi:id="_mmDIoBJeEei7A-ctFtCKrQ" name="control">
             <packagedElement xmi:type="uml:Class" xmi:id="_mmDIoRJeEei7A-ctFtCKrQ" name="TableView"/>
@@ -646,6 +980,9 @@
             <packagedElement xmi:type="uml:Class" xmi:id="_mmUOYBJeEei7A-ctFtCKrQ" name="Button"/>
             <packagedElement xmi:type="uml:Class" xmi:id="_s8NZcBJeEei7A-ctFtCKrQ" name="TableColumn"/>
             <packagedElement xmi:type="uml:Class" xmi:id="_-kEoABJeEei7A-ctFtCKrQ" name="Label"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_XSwLABVOEeiUM-q-1n6dIw" name="TextField"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_wnPHABVOEeiUM-q-1n6dIw" name="ChoiceBox"/>
+            <packagedElement xmi:type="uml:Class" xmi:id="_RRQGIBVPEeiUM-q-1n6dIw" name="CheckBox"/>
           </packagedElement>
         </packagedElement>
       </packagedElement>
@@ -923,6 +1260,9 @@
       <ownedComment xmi:type="uml:Comment" xmi:id="_0IkyIBJhEei7A-ctFtCKrQ">
         <body>Boite de dialogue listant les options d'un véhicules</body>
       </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_oA0DwBVOEeiUM-q-1n6dIw">
+        <body>Boites de dialogue permettant la création de marques, de moteurs, d'options, de types de moteur et de véhicules</body>
+      </ownedComment>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_z4vRIBF2EeivPvkNQTDlpg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_z4xGUBF2EeivPvkNQTDlpg" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -969,4 +1309,9 @@
   <PapyrusJava:External xmi:id="_-kHEQBJeEei7A-ctFtCKrQ" name="javafx.scene.control.Label" base_Classifier="_-kEoABJeEei7A-ctFtCKrQ"/>
   <PapyrusJava:External xmi:id="_-kVGsBJeEei7A-ctFtCKrQ" name="com.garage.modele.voiture.Vehicule" base_Classifier="_-kSDYBJeEei7A-ctFtCKrQ"/>
   <standard:Create xmi:id="_628ZgBJfEei7A-ctFtCKrQ" base_BehavioralFeature="_625WMBJfEei7A-ctFtCKrQ"/>
+  <PapyrusJava:External xmi:id="_XWfbgBVOEeiUM-q-1n6dIw" name="javafx.scene.control.TextField" base_Classifier="_XSwLABVOEeiUM-q-1n6dIw"/>
+  <PapyrusJava:External xmi:id="_wnV0sBVOEeiUM-q-1n6dIw" name="javafx.scene.control.ChoiceBox" base_Classifier="_wnPHABVOEeiUM-q-1n6dIw"/>
+  <PapyrusJava:External xmi:id="_RROQ8BVPEeiUM-q-1n6dIw" name="javafx.scene.layout.FlowPane" base_Classifier="_RRA1kRVPEeiUM-q-1n6dIw"/>
+  <PapyrusJava:External xmi:id="_RRTwgBVPEeiUM-q-1n6dIw" name="javafx.scene.control.CheckBox" base_Classifier="_RRQGIBVPEeiUM-q-1n6dIw"/>
+  <PapyrusJava:External xmi:id="_RRYB8BVPEeiUM-q-1n6dIw" name="com.garage.modele.voiture.option.Option" base_Classifier="_RRU-oRVPEeiUM-q-1n6dIw"/>
 </xmi:XMI>

@@ -172,7 +172,7 @@ public class Modele implements Observable {
 			}
 		} catch (SQLException e) {
 			if (e.getClass() == SQLIntegrityConstraintViolationException.class) {
-				this.setErreur("Cette objet ne peut être supprimé car il est utilisé par un autre");
+				this.setErreur("Cet objet ne peut être supprimé car il est utilisé par un autre");
 				
 			} else {
 				this.setErreur("Erreur de la base de données lors de la suppression");

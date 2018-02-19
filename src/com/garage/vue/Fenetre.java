@@ -3,8 +3,6 @@ package com.garage.vue;
 import java.io.IOException;
 
 import com.garage.Garage2;
-import com.garage.modele.dao.DatabaseTable;
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

@@ -10,7 +10,7 @@
         <columns>
           <TableColumn fx:id="id" editable="false" prefWidth="594.0" text="ID" />
           <TableColumn fx:id="description" editable="false" minWidth="0.0" prefWidth="1.0" text="DESCRIPTION" />
-            <TableColumn fx:id="prix" editable="false" minWidth="0.0" prefWidth="1.0" text="PRIX" />
+            <TableColumn fx:id="prix" editable="false" minWidth="0.0" prefWidth="1.0" text="PRIX (€)" />
             <TableColumn fx:id="action" editable="false" minWidth="0.0" prefWidth="1.0" />
         </columns>
          <columnResizePolicy>

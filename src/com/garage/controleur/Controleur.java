@@ -1,5 +1,7 @@
 package com.garage.controleur;
 
+import java.util.List;
+
 import com.garage.modele.Modele;
 import com.garage.modele.dao.DatabaseTable;
 import com.garage.modele.voiture.Marque;
@@ -49,18 +51,58 @@ public class Controleur {
 	 */
 	public void ajouter(Object o) {
 		if (o.getClass() == Marque.class) {
-			modele.ajouter(DatabaseTable.MARQUE, o);
+			if (!existeDansBdd(o))
+				modele.ajouter(DatabaseTable.MARQUE, o);
+			else
+				modele.setErreur("Cette marque existe déjà");
 		} else if (o.getClass() == Moteur.class) {
-			modele.ajouter(DatabaseTable.MOTEUR, o);
+			if (!existeDansBdd(o))
+				modele.ajouter(DatabaseTable.MOTEUR, o);
+			else
+				modele.setErreur("Ce moteur existe déjà");
 		} else if (o.getClass() == TypeMoteur.class) {
-			modele.ajouter(DatabaseTable.TYPEMOTEUR, o);
+			if (!existeDansBdd(o))
+				modele.ajouter(DatabaseTable.TYPEMOTEUR, o);
+			else
+				modele.setErreur("Ce type de moteur existe déjà");
 		} else if (o.getClass() == Vehicule.class) {
-			modele.ajouter(DatabaseTable.VEHICULE, o);
+				modele.ajouter(DatabaseTable.VEHICULE, o);
+
 		} else if (o.getClass() == Option.class) {
-			modele.ajouter(DatabaseTable.OPTION, o);
+			if (!existeDansBdd(o))
+				modele.ajouter(DatabaseTable.OPTION, o);
+			else
+				modele.setErreur("Cette option existe déjà");
 		} else {
 			modele.setErreur("Erreur lors de la création d'un élément, l'élément n'a pas été créé");
 		}
 	}
+	/**
+	 * Test si l'objet existe déja dans la base de données correspondante
+	 * @param o
+	 * @return
+	 */
+	private boolean existeDansBdd(Object o) {
+		boolean existeDeja = false;
+		List list = null;
+		
+		if (o.getClass() == Marque.class) {
+			list = modele.getTable(DatabaseTable.MARQUE);
+		} else if (o.getClass() == Moteur.class) {
+			list = modele.getTable(DatabaseTable.MOTEUR);
+		} else if (o.getClass() == TypeMoteur.class) {
+			list = modele.getTable(DatabaseTable.TYPEMOTEUR);
+		} else if (o.getClass() == Option.class) {
+			list = modele.getTable(DatabaseTable.OPTION);
+		}
+		
+		for (Object obj : list) {
+			if (obj.toString().equalsIgnoreCase((o.toString())))
+				existeDeja = true;
+		}
 
+		return existeDeja;
+
+	}
 }
+

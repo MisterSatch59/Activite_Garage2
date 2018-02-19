@@ -42,7 +42,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Label text="Prix" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <Label text="Prix (€)" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>

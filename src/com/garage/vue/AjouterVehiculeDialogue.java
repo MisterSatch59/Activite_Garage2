@@ -50,20 +50,40 @@ public class AjouterVehiculeDialogue {
 
 	public void valider() {
 		try {
-			Vehicule v = new Vehicule(0, nom.getText(),marque.getValue(), moteur.getValue(),Double.valueOf(prix.getText()));
-			for (int i = 0; i < cbOptions.length; i++) {
-				if (cbOptions[i].isSelected()) {
-					v.addOption(optionVehicule[i]);
+			Vehicule v;
+			if (!nom.getText().equalsIgnoreCase("")) {
+				if (marque.getValue() != null) {
+					if (moteur.getValue() != null) {
+						v = new Vehicule(0, nom.getText(), marque.getValue(), moteur.getValue(),Double.valueOf(prix.getText()));
+						for (int i = 0; i < cbOptions.length; i++) {
+							if (cbOptions[i].isSelected()) {
+								v.addOption(optionVehicule[i]);
+							}
+						}
+						controleur.ajouter(v);
+						stageDialogue.close();
+					} else {
+						Alert probleme = new Alert(AlertType.ERROR);
+						probleme.setTitle("Erreur");
+						probleme.setHeaderText("Veuillez choisir la moteur du véhicule");
+						probleme.showAndWait();
+					}
+				} else {
+					Alert probleme = new Alert(AlertType.ERROR);
+					probleme.setTitle("Erreur");
+					probleme.setHeaderText("Veuillez choisir la marque du véhicule");
+					probleme.showAndWait();
 				}
+			} else {
+				Alert probleme = new Alert(AlertType.ERROR);
+				probleme.setTitle("Erreur");
+				probleme.setHeaderText("Veuillez entrer le nom du véhicule");
+				probleme.showAndWait();
 			}
-			
-			controleur.ajouter(v);
-			
-			stageDialogue.close();
-		}catch (NumberFormatException | NullPointerException e) {
+		} catch (NumberFormatException e) {
 			Alert probleme = new Alert(AlertType.ERROR);
 			probleme.setTitle("Erreur");
-			probleme.setHeaderText("Les valeurs entrées sont incorrecte, merci de corriger vos données avant de valider");
+			probleme.setHeaderText("Le prix du véhicule est incorrect : merci d'entrer un prix en euros");
 			probleme.showAndWait();
 		}
 	}

@@ -27,8 +27,8 @@
       <TableView fx:id="table" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="description" prefWidth="75.0" text="Option" />
-            <TableColumn fx:id="prix" prefWidth="101.0" text="Prix" />
+          <TableColumn fx:id="description" prefWidth="75.0" text="OPTION" />
+            <TableColumn fx:id="prix" prefWidth="101.0" text="PRIX (€)" />
         </columns>
          <BorderPane.margin>
             <Insets top="20.0" />
