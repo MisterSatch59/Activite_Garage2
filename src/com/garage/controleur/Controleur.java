@@ -57,7 +57,7 @@ public class Controleur {
 		} else if (o.getClass() == Vehicule.class) {
 			modele.ajouter(DatabaseTable.VEHICULE, o);
 		} else if (o.getClass() == Option.class) {
-			modele.ajouter(DatabaseTable.MOTEUR, o);
+			modele.ajouter(DatabaseTable.OPTION, o);
 		} else {
 			modele.setErreur("Erreur lors de la création d'un élément, l'élément n'a pas été créé");
 		}

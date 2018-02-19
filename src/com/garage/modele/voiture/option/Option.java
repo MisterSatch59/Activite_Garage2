@@ -1,7 +1,5 @@
 package com.garage.modele.voiture.option;
 
-import java.io.Serializable;
-
 public class Option {
 
 	private int id = 0;

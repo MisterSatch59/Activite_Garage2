@@ -27,16 +27,16 @@
                   <MenuItem mnemonicParsing="false" onAction="#ajouterMoteurs" text="Ajouter" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Options">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#voirOptions" text="Voir" />
-                  <MenuItem mnemonicParsing="false" onAction="#ajouterOptions" text="Ajouter" />
-               </items>
-            </Menu>
             <Menu mnemonicParsing="false" text="Types de moteur">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#voirTypesMoteur" text="Voir" />
                   <MenuItem mnemonicParsing="false" onAction="#ajouterTypesMoteur" text="Ajouter" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Options">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#voirOptions" text="Voir" />
+                  <MenuItem mnemonicParsing="false" onAction="#ajouterOptions" text="Ajouter" />
                </items>
             </Menu>
         </menus>
